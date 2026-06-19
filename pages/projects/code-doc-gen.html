@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Code Documentation Generator | Aaron Nathanael</title>
+    <link rel="stylesheet" href="../../assets/css/style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <a href="../index.html" class="back-link">← Back to Home</a>
+    <main class="section">
+      <div class="project-detail">
+        <div
+          class="project-hero-image reveal"
+          style="background: linear-gradient(135deg, #1e3a8a, #172554)"
+        ></div>
+        <h1
+          class="section-title reveal reveal-delay-1"
+          style="margin-bottom: 24px; text-align: left"
+        >
+          Code Documentation Generator
+        </h1>
+        <div class="project-description reveal reveal-delay-2">
+          <p>
+            A local-first "Code-to-Doc" generator using Few-Shot Prompting with
+            a lightweight LLM (Qwen2.5-1.5B-Instruct) to generate structured,
+            validated Python docstrings — entirely offline.
+          </p>
+          <h3>The Challenge</h3>
+          <p>
+            Developers frequently neglect documentation, accumulating technical
+            debt. Existing tools either hallucinate parameter names or depend on
+            expensive cloud APIs.
+          </p>
+          <h3>Engineering Solutions</h3>
+          <ul>
+            <li>
+              <strong>Structured Output Reliability:</strong> Implemented a
+              JSON-enforced prompt strategy that eliminates conversational
+              output, forcing the model to return strictly parsable schemas
+              only.
+            </li>
+            <li>
+              <strong>Hallucination Prevention:</strong> Built a heuristic AST
+              validator that cross-references generated parameter names against
+              actual source code — any non-existent argument is automatically
+              rejected.
+            </li>
+            <li>
+              <strong>Evaluation Pipeline:</strong> Developed a custom
+              evaluation engine computing BLEU, ROUGE-L, and METEOR scores
+              against human-written reference documentation for quantitative
+              quality benchmarking.
+            </li>
+          </ul>
+          <h3>Hardware & Performance</h3>
+          <ul>
+            <li>
+              <strong>Requirements:</strong> Modern CPU (4+ cores) with 8-12 GB
+              RAM; GPU not required.
+            </li>
+            <li>
+              <strong>Runtime Estimate:</strong> First run downloads the model
+              (~30-90s). Afterward expect ~5-20s per file, depending on size.
+            </li>
+          </ul>
+          <h3>Tech Stack</h3>
+          <p>
+            Python 3.11, Qwen2.5-1.5B-Instruct, DistilGPT2, HuggingFace
+            Transformers, PyTorch, NLTK, tiktoken, Pydantic, Streamlit
+          </p>
+          <a
+            href="https://github.com/CurvyCroissant/Code-Documentation-Generator.git"
+            target="_blank"
+            class="repo-link"
+            >View Repository →</a
+          >
+        </div>
+      </div>
+    </main>
+    <script src="../../assets/js/main.js"></script>
+  </body>
+</html>

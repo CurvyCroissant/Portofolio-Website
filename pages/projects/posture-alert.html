@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Posture Alert App | Aaron Nathanael</title>
+    <link rel="stylesheet" href="../../assets/css/style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <a href="../index.html" class="back-link">← Back to Home</a>
+    <main class="section">
+      <div class="project-detail">
+        <div
+          class="project-hero-image reveal"
+          style="background: linear-gradient(135deg, #1e293b, #0f172a)"
+        ></div>
+        <h1
+          class="section-title reveal reveal-delay-1"
+          style="margin-bottom: 24px; text-align: left"
+        >
+          Posture Alert App
+        </h1>
+        <div class="project-description reveal reveal-delay-2">
+          <p>
+            A webcam-based web application that detects spinal misalignment in
+            real-time using geometric analysis — no additional hardware
+            required.
+          </p>
+          <h3>The Challenge</h3>
+          <p>
+            Slouching is prevalent among computer users, but hardware-based
+            solutions are expensive and intrusive. Standard software models also
+            face tracking issues when features are occluded.
+          </p>
+          <h3>Engineering Solutions</h3>
+          <ul>
+            <li>
+              <strong>Occlusion Handling:</strong> Standard pose models lose
+              tracking when users wear headphones (ears get occluded). Tracking
+              was re-implemented on Eye Landmarks instead of ears, maintaining
+              detection continuity.
+            </li>
+            <li>
+              <strong>Noise Filtering:</strong> A Calibration Lock Algorithm was
+              built to calculate a normalized shoulder-width baseline for the
+              primary user. It ignores any detected figure smaller than 60% of
+              the calibrated size, eliminating false alerts from background
+              movement.
+            </li>
+            <li>
+              <strong>Depth Invariance:</strong> The system relies on relative
+              geometric ratios rather than raw pixel distances, allowing it to
+              function accurately regardless of camera distance.
+            </li>
+          </ul>
+          <h3>Features</h3>
+          <ul>
+            <li>Live slouch alerts</li>
+            <li>Event logging</li>
+            <li>Exportable session reports</li>
+          </ul>
+          <h3>Tech Stack</h3>
+          <p>Python, MediaPipe (Pose Estimation), OpenCV2, Streamlit, Pandas</p>
+          <a
+            href="https://github.com/CurvyCroissant/Posture-Alert.git"
+            target="_blank"
+            class="repo-link"
+            >View Repository →</a
+          >
+        </div>
+      </div>
+    </main>
+    <script src="../../assets/js/main.js"></script>
+  </body>
+</html>

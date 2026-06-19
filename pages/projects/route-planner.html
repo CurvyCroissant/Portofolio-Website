@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Route Planner | Aaron Nathanael</title>
+    <link rel="stylesheet" href="../../assets/css/style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <a href="../index.html" class="back-link">← Back to Home</a>
+    <main class="section">
+      <div class="project-detail">
+        <div
+          class="project-hero-image reveal"
+          style="background: linear-gradient(135deg, #4c1d95, #2e1065)"
+        ></div>
+        <h1
+          class="section-title reveal reveal-delay-1"
+          style="margin-bottom: 24px; text-align: left"
+        >
+          Public Transport Route Planner
+        </h1>
+        <div class="project-description reveal reveal-delay-2">
+          <p>
+            A web-based Route Planner & Tracker that aggregates static schedules
+            and live GPS vehicle data to provide optimized routes, real-time
+            ETAs, and statistical on-time reliability metrics.
+          </p>
+          <h3>The Challenge</h3>
+          <p>
+            Urban commuters face uncertainty due to unreliable public transport
+            schedules, unpredictable delays, and no centralized real-time
+            disruption feed.
+          </p>
+          <h3>Engineering Solutions</h3>
+          <ul>
+            <li>
+              <strong>Hybrid Data Sync:</strong> Engineered a fail-safe ETA
+              engine that prioritizes live Firebase GPS data, with automatic
+              fallback to static MySQL schedules if live data is unavailable —
+              ensuring zero downtime on ETA estimates.
+            </li>
+            <li>
+              <strong>Geospatial Visualization:</strong> Dynamic Leaflet
+              polylines render accurate route corridors by fetching ordered stop
+              coordinates from the database.
+            </li>
+            <li>
+              <strong>Reliability Quantification:</strong> Created "On-Time
+              Insight," a custom statistical metric that compares historical vs.
+              scheduled arrival times to calculate a reliability percentage per
+              route.
+            </li>
+          </ul>
+          <h3>Features</h3>
+          <ul>
+            <li>Account registration and login system</li>
+            <li>Route search between stops</li>
+            <li>Live vehicle arrivals panel with GPS indicator</li>
+            <li>Service disruption notices panel</li>
+            <li>Interactive map with real-time route rendering</li>
+          </ul>
+          <h3>Tech Stack</h3>
+          <p>
+            PHP (Laravel Framework), Eloquent ORM, MySQL, Blade Templates, Vite,
+            Tailwind CSS, Leaflet.js, Firebase
+          </p>
+        </div>
+      </div>
+    </main>
+    <script src="../../assets/js/main.js"></script>
+  </body>
+</html>

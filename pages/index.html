@@ -1,0 +1,233 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portfolio | Aaron Nathanael</title>
+    <link rel="stylesheet" href="../assets/css/style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="floating-controls">
+      <button id="theme-toggle" class="theme-toggle" aria-label="Toggle Theme">
+        <span class="toggle-text">Light</span>
+        <span class="mode-icon">
+          <svg
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <circle cx="12" cy="12" r="5" />
+            <line x1="12" y1="1" x2="12" y2="3" />
+            <line x1="12" y1="21" x2="12" y2="23" />
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" />
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78" />
+            <line x1="1" y1="12" x2="3" y2="12" />
+            <line x1="21" y1="12" x2="23" y2="12" />
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" />
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" />
+          </svg>
+        </span>
+      </button>
+    </div>
+    <main>
+      <section id="home" class="hero">
+        <h1 class="fade-in">Aaron Nathanael.</h1>
+        <p class="fade-in delay-1">
+          Designing the future of digital experiences.
+        </p>
+      </section>
+      <section id="about" class="section reveal">
+        <h2 class="section-title">About</h2>
+        <p class="about-text">
+          I am a Computer Science undergraduate at BINUS University, currently
+          expanding my horizons through an exchange program at the Shibaura
+          Institute of Technology in Tokyo, Japan. With a GPA of 3.92, I balance
+          academic excellence with a passion for building real-world
+          applications in Artificial Intelligence and Full-Stack Web
+          Development.
+        </p>
+      </section>
+      <section id="projects" class="section reveal">
+        <h2 class="section-title">Selected Work</h2>
+        <div class="project-grid">
+          <div class="reveal">
+            <a href="projects/posture-alert.html" class="project-card">
+              <div
+                class="project-image"
+                style="background: linear-gradient(135deg, #1e293b, #0f172a)"
+              ></div>
+              <div class="project-info">
+                <h3>Posture Alert App</h3>
+                <p>
+                  Real-time spinal misalignment detection using MediaPipe and
+                  OpenCV.
+                </p>
+              </div>
+            </a>
+          </div>
+          <div class="reveal reveal-delay-1">
+            <a href="projects/code-doc-gen.html" class="project-card">
+              <div
+                class="project-image"
+                style="background: linear-gradient(135deg, #1e3a8a, #172554)"
+              ></div>
+              <div class="project-info">
+                <h3>Code Documentation Generator</h3>
+                <p>
+                  Local-first NLP tool using Qwen2.5 to generate validated
+                  Python docstrings.
+                </p>
+              </div>
+            </a>
+          </div>
+          <div class="reveal reveal-delay-2">
+            <a href="projects/safefall.html" class="project-card">
+              <div
+                class="project-image"
+                style="background: linear-gradient(135deg, #7f1d1d, #450a0a)"
+              ></div>
+              <div class="project-info">
+                <h3>SafeFall</h3>
+                <p>
+                  AI-powered fall detection system using a custom-trained YOLOv8
+                  model.
+                </p>
+              </div>
+            </a>
+          </div>
+          <div class="reveal reveal-delay-3">
+            <a href="projects/route-planner.html" class="project-card">
+              <div
+                class="project-image"
+                style="background: linear-gradient(135deg, #4c1d95, #2e1065)"
+              ></div>
+              <div class="project-info">
+                <h3>Route Planner</h3>
+                <p>
+                  Full-stack geospatial app combining Laravel, Firebase, and
+                  Leaflet.js.
+                </p>
+              </div>
+            </a>
+          </div>
+          <div class="reveal">
+            <a href="projects/crop-yield-predictor.html" class="project-card">
+              <div
+                class="project-image"
+                style="background: linear-gradient(135deg, #064e3b, #022c22)"
+              ></div>
+              <div class="project-info">
+                <h3>Crop Yield Predictor</h3>
+                <p>
+                  ML pipeline predicting crop yield using a Gradient Boosting
+                  Regressor.
+                </p>
+              </div>
+            </a>
+          </div>
+          <div class="reveal reveal-delay-1">
+            <a href="projects/personality-predictor.html" class="project-card">
+              <div
+                class="project-image"
+                style="background: linear-gradient(135deg, #831843, #4c0519)"
+              ></div>
+              <div class="project-info">
+                <h3>Personality Predictor App</h3>
+                <p>
+                  Computer Vision Neural Network mapping clothing attributes to
+                  OCEAN traits.
+                </p>
+              </div>
+            </a>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer class="main-footer">
+      <div class="footer-content">
+        <div class="social-links">
+          <div class="social-item reveal" id="email-item">
+            <a href="#" class="social-link" id="email-link" aria-label="Email">
+              <svg
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path
+                  d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"
+                />
+                <polyline points="22,6 12,13 2,6" />
+              </svg>
+              <span class="link-text">aaronnathanaelishakleman@gmail.com</span>
+            </a>
+          </div>
+          <div class="social-item reveal reveal-delay-1">
+            <a
+              href="https://github.com/CurvyCroissant"
+              target="_blank"
+              class="social-link"
+              aria-label="GitHub"
+            >
+              <svg
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path
+                  d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"
+                />
+              </svg>
+              <span class="link-text">github.com/CurvyCroissant</span>
+            </a>
+          </div>
+          <div class="social-item reveal reveal-delay-2">
+            <a
+              href="https://www.linkedin.com/in/aaron-nathanael"
+              target="_blank"
+              class="social-link"
+              aria-label="LinkedIn"
+            >
+              <svg
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <rect x="2" y="2" width="20" height="20" rx="2" ry="2" />
+                <circle cx="7" cy="7" r="1" />
+                <line x1="7" y1="10" x2="7" y2="16" />
+                <path d="M11 16v-4a2 2 0 0 1 4 0v4" />
+              </svg>
+              <span class="link-text">linkedin.com/in/aaron-nathanael</span>
+            </a>
+          </div>
+        </div>
+        <p class="footer-text reveal reveal-delay-3">
+          &copy; 2026 Aaron Nathanael
+        </p>
+      </div>
+    </footer>
+    <script src="../assets/js/main.js"></script>
+  </body>
+</html>

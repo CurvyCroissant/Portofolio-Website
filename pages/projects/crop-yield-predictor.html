@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Crop Yield Predictor | Aaron Nathanael</title>
+    <link rel="stylesheet" href="../../assets/css/style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <a href="../index.html" class="back-link">← Back to Home</a>
+    <main class="section">
+      <div class="project-detail">
+        <div
+          class="project-hero-image reveal"
+          style="background: linear-gradient(135deg, #064e3b, #022c22)"
+        ></div>
+        <h1
+          class="section-title reveal reveal-delay-1"
+          style="margin-bottom: 24px; text-align: left"
+        >
+          Crop Yield Predictor
+        </h1>
+        <div class="project-description reveal reveal-delay-2">
+          <p>
+            A Machine Learning pipeline predicting crop yield (hg/ha) from
+            environmental inputs (Rainfall, Temperature) and agricultural inputs
+            (Pesticides) using a Gradient Boosting Regressor.
+          </p>
+          <h3>The Problem</h3>
+          <p>
+            Crop yield is highly volatile due to shifting weather and
+            inconsistent resource use, making it hard for farmers and
+            policymakers to plan for food security.
+          </p>
+          <h3>Engineering & Data Science Solutions</h3>
+          <ul>
+            <li>
+              <strong>Data Integrity:</strong> Built a cleaning pipeline to
+              isolate and remove non-numeric garbage values in the raw Rainfall
+              dataset.
+            </li>
+            <li>
+              <strong>High-Cardinality Features:</strong> Applied One-Hot
+              Encoding on complex categorical variables to preserve geographical
+              context without data loss.
+            </li>
+            <li>
+              <strong>Model Optimization:</strong> Benchmarked 5 regression
+              algorithms (Linear, Lasso, Decision Tree, Random Forest, Gradient
+              Boosting). Gradient Boosting achieved 96% accuracy (R²),
+              outperforming the baseline.
+            </li>
+          </ul>
+          <h3>Business Simulation & Analysis</h3>
+          <ul>
+            <li>
+              <strong>Anomaly Detection:</strong> Identified 155 anomalies from
+              5,649 test samples using Z-score analysis.
+            </li>
+            <li>
+              <strong>Intervention Scenario:</strong> Modeled a real-world
+              simulation targeting low-yield farms (&lt;30,000 hg/ha).
+            </li>
+            <li>
+              <strong>Simulation Metrics:</strong> Baseline Revenue:
+              $43,532,249.40 | Model-Informed Revenue (Net): $43,170,371.68 |
+              Net Profit Gain: $-361,877.72 | ROI: -30.2%
+            </li>
+          </ul>
+          <h3>Tech Stack</h3>
+          <p>Python, Pandas, NumPy, Scikit-Learn, Seaborn, Matplotlib</p>
+        </div>
+      </div>
+    </main>
+    <script src="../../assets/js/main.js"></script>
+  </body>
+</html>

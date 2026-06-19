@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SafeFall: Fall Detection App | Aaron Nathanael</title>
+    <link rel="stylesheet" href="../../assets/css/style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <a href="../index.html" class="back-link">← Back to Home</a>
+    <main class="section">
+      <div class="project-detail">
+        <div
+          class="project-hero-image reveal"
+          style="background: linear-gradient(135deg, #7f1d1d, #450a0a)"
+        ></div>
+        <h1
+          class="section-title reveal reveal-delay-1"
+          style="margin-bottom: 24px; text-align: left"
+        >
+          SafeFall: Fall Detection App
+        </h1>
+        <div class="project-description reveal reveal-delay-2">
+          <p>
+            A fall detection system that monitors webcam or mobile phone video
+            streams, identifies fall events using a custom-trained YOLOv8 model,
+            and alerts caregivers with timestamped logs.
+          </p>
+          <h3>The Challenge</h3>
+          <p>
+            Falls are a leading cause of injury, especially among the elderly.
+            Real-time detection and caregiver alerting is often absent or
+            dependent on expensive wearable hardware.
+          </p>
+          <h3>The Solution</h3>
+          <p>
+            Developed as a semi-finalist submission for the Samsung Innovation
+            Campus (Batch 5), this software-based approach utilizes computer
+            vision to monitor environments continuously.
+          </p>
+          <h3>Features</h3>
+          <ul>
+            <li>Supports both webcam and mobile phone stream input</li>
+            <li>Logs every detection with a timestamp and confidence score</li>
+            <li>
+              Displays caregiver contact information for rapid notification
+            </li>
+          </ul>
+          <h3>Tech Stack</h3>
+          <p>Python, OpenCV, YOLOv8 (Ultralytics), Pandas, Streamlit</p>
+          <a
+            href="https://github.com/CurvyCroissant/SafeFall.git"
+            target="_blank"
+            class="repo-link"
+            >View Repository →</a
+          >
+        </div>
+      </div>
+    </main>
+    <script src="../../assets/js/main.js"></script>
+  </body>
+</html>
