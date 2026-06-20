@@ -35,9 +35,7 @@ document.addEventListener("DOMContentLoaded", () => {
     link.addEventListener("click", function (e) {
       const textSpan = this.querySelector(".link-text");
       if (!textSpan) return;
-
       const originalText = textSpan.innerText;
-
       if (this.id === "email-link") {
         e.preventDefault();
         e.stopPropagation();
@@ -49,7 +47,7 @@ document.addEventListener("DOMContentLoaded", () => {
               textSpan.innerText = originalText;
             }, 2000);
           })
-          .catch((err) => {});
+          .catch(() => {});
       } else {
         textSpan.innerText = "Redirecting...";
         setTimeout(() => {
@@ -58,6 +56,31 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     });
   });
+
+  const modal = document.getElementById("cert-modal");
+  const modalImg = document.getElementById("modal-image");
+  const closeBtn = document.querySelector(".modal-close");
+
+  document.querySelectorAll(".cert-card, .proof-link").forEach((trigger) => {
+    trigger.addEventListener("click", (e) => {
+      e.preventDefault();
+      if (modal && modalImg) {
+        modalImg.src = trigger.getAttribute("href");
+        modal.classList.add("active");
+      }
+    });
+  });
+
+  if (closeBtn && modal) {
+    closeBtn.addEventListener("click", () => {
+      modal.classList.remove("active");
+    });
+    modal.addEventListener("click", (e) => {
+      if (e.target === modal) {
+        modal.classList.remove("active");
+      }
+    });
+  }
 
   const revealElements = document.querySelectorAll(".reveal");
   const revealObserver = new IntersectionObserver(
@@ -68,5 +91,6 @@ document.addEventListener("DOMContentLoaded", () => {
     },
     { threshold: 0.1 },
   );
+
   revealElements.forEach((el) => revealObserver.observe(el));
 });

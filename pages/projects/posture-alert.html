@@ -11,12 +11,37 @@
     />
   </head>
   <body>
+    <div class="floating-controls">
+      <button id="theme-toggle" class="theme-toggle" aria-label="Toggle Theme">
+        <span class="toggle-text">Light</span>
+        <span class="mode-icon">
+          <svg
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <circle cx="12" cy="12" r="5" />
+            <line x1="12" y1="1" x2="12" y2="3" />
+            <line x1="12" y1="21" x2="12" y2="23" />
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" />
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78" />
+            <line x1="1" y1="12" x2="3" y2="12" />
+            <line x1="21" y1="12" x2="23" y2="12" />
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" />
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" />
+          </svg>
+        </span>
+      </button>
+    </div>
     <a href="../index.html" class="back-link">← Back to Home</a>
     <main class="section">
       <div class="project-detail">
         <div
           class="project-hero-image reveal"
-          style="background: linear-gradient(135deg, #1e293b, #0f172a)"
+          style="background: linear-gradient(135deg, #e0f2f1, #b2dfdb)"
         ></div>
         <h1
           class="section-title reveal reveal-delay-1"
@@ -27,53 +52,126 @@
         <div class="project-description reveal reveal-delay-2">
           <p>
             A webcam-based web application that detects spinal misalignment in
-            real-time using geometric analysis — no additional hardware
-            required.
+            real-time using geometric analysis, requiring no additional
+            hardware.
           </p>
           <h3>The Challenge</h3>
           <p>
-            Slouching is prevalent among computer users, but hardware-based
-            solutions are expensive and intrusive. Standard software models also
-            face tracking issues when features are occluded.
+            Slouching is widespread among computer users, but hardware solutions
+            are often intrusive or expensive. A major technical hurdle was
+            occlusion; standard pose models stop tracking when users wear
+            headphones. I solved this by re-implementing landmark tracking on
+            eye landmarks instead of ears.
           </p>
-          <h3>Engineering Solutions</h3>
-          <ul>
-            <li>
-              <strong>Occlusion Handling:</strong> Standard pose models lose
-              tracking when users wear headphones (ears get occluded). Tracking
-              was re-implemented on Eye Landmarks instead of ears, maintaining
-              detection continuity.
-            </li>
-            <li>
-              <strong>Noise Filtering:</strong> A Calibration Lock Algorithm was
-              built to calculate a normalized shoulder-width baseline for the
-              primary user. It ignores any detected figure smaller than 60% of
-              the calibrated size, eliminating false alerts from background
-              movement.
-            </li>
-            <li>
-              <strong>Depth Invariance:</strong> The system relies on relative
-              geometric ratios rather than raw pixel distances, allowing it to
-              function accurately regardless of camera distance.
-            </li>
-          </ul>
-          <h3>Features</h3>
-          <ul>
-            <li>Live slouch alerts</li>
-            <li>Event logging</li>
-            <li>Exportable session reports</li>
-          </ul>
+          <h3>The Solution</h3>
+          <p>
+            I developed a system using MediaPipe for pose estimation and OpenCV
+            for geometric analysis. To eliminate false alerts from background
+            movement, I implemented a
+            <strong>Calibration Lock Algorithm</strong> that ignores any figures
+            smaller than 60% of the calibrated user's shoulder-width baseline.
+          </p>
           <h3>Tech Stack</h3>
-          <p>Python, MediaPipe (Pose Estimation), OpenCV2, Streamlit, Pandas</p>
+          <p>Python, MediaPipe, OpenCV2, Streamlit, Pandas</p>
           <a
             href="https://github.com/CurvyCroissant/Posture-Alert.git"
             target="_blank"
             class="repo-link"
             >View Repository →</a
           >
+
+          <h3 style="margin-top: 48px; margin-bottom: 24px">Project Gallery</h3>
+          <div class="cert-grid">
+            <div class="reveal">
+              <a
+                href="../../assets/img/projects/posture-alert/when-slouching.jpg"
+                class="cert-card"
+              >
+                <div
+                  class="cert-image"
+                  style="
+                    background-image: url(&quot;../../assets/img/projects/posture-alert/when-slouching.jpg&quot;);
+                    background-position: top;
+                  "
+                ></div>
+                <div class="cert-info">
+                  <h3 style="margin-bottom: 0">Slouch Detection</h3>
+                </div>
+              </a>
+            </div>
+            <div class="reveal reveal-delay-1">
+              <a
+                href="../../assets/img/projects/posture-alert/when-using-headphones.jpg"
+                class="cert-card"
+              >
+                <div
+                  class="cert-image"
+                  style="
+                    background-image: url(&quot;../../assets/img/projects/posture-alert/when-using-headphones.jpg&quot;);
+                    background-position: top;
+                  "
+                ></div>
+                <div class="cert-info">
+                  <h3 style="margin-bottom: 0">Occlusion Handling</h3>
+                </div>
+              </a>
+            </div>
+            <div class="reveal reveal-delay-2">
+              <a
+                href="../../assets/img/projects/posture-alert/with-background-noise.jpg"
+                class="cert-card"
+              >
+                <div
+                  class="cert-image"
+                  style="
+                    background-image: url(&quot;../../assets/img/projects/posture-alert/with-background-noise.jpg&quot;);
+                    background-position: top;
+                  "
+                ></div>
+                <div class="cert-info">
+                  <h3 style="margin-bottom: 0">Background Filtering</h3>
+                </div>
+              </a>
+            </div>
+            <div class="reveal reveal-delay-3">
+              <a
+                href="../../assets/img/projects/posture-alert/when-looking-down.jpg"
+                class="cert-card"
+              >
+                <div
+                  class="cert-image"
+                  style="
+                    background-image: url(&quot;../../assets/img/projects/posture-alert/when-looking-down.jpg&quot;);
+                    background-position: top;
+                  "
+                ></div>
+                <div class="cert-info">
+                  <h3 style="margin-bottom: 0">Head Tilt Detection</h3>
+                </div>
+              </a>
+            </div>
+          </div>
         </div>
       </div>
     </main>
+    <div class="modal" id="cert-modal">
+      <button class="modal-close" aria-label="Close modal">
+        <svg
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+      </button>
+      <img class="modal-content" id="modal-image" src="" alt="Expanded View" />
+    </div>
     <script src="../../assets/js/main.js"></script>
   </body>
 </html>
