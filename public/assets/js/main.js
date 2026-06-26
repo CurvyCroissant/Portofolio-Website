@@ -268,7 +268,7 @@ document.addEventListener("DOMContentLoaded", () => {
             break;
           default:
             printLine(
-              `'${cmd}' is not recognized as an internal or external command,\noperable program or batch file.`,
+              `'${cmd}' is not recognized as an internal or external command, operable program or batch file.`,
             );
         }
       }
@@ -297,8 +297,10 @@ document.addEventListener("DOMContentLoaded", () => {
     engine.gravity.y = 0;
     engine.gravity.x = 0;
 
-    let width = skillsContainer.getBoundingClientRect().width || 648;
+    const containerRect = skillsContainer.getBoundingClientRect();
+    let width = containerRect.width || 648;
     const height = 270;
+
     const wallThickness = 1000;
     const wallOptions = {
       isStatic: true,

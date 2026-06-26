@@ -211,6 +211,11 @@ button:focus-visible {
   min-height: 270px;
   overflow: hidden;
   padding: 0;
+  cursor: grab;
+}
+
+.skills-container.physics-active:active {
+  cursor: grabbing;
 }
 
 .skill-pill {
@@ -241,7 +246,6 @@ button:focus-visible {
   top: -1000px;
   left: -1000px;
   margin: 0;
-  cursor: grab;
   user-select: none;
   z-index: 10;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
@@ -250,10 +254,6 @@ button:focus-visible {
 
 [data-theme="light"] .physics-active .skill-pill {
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-}
-
-.physics-active .skill-pill:active {
-  cursor: grabbing;
 }
 
 .project-grid {
