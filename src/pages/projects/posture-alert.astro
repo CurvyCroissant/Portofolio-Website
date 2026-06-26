@@ -1,0 +1,131 @@
+---
+import Layout from "../../layouts/Layout.astro";
+---
+
+<Layout title="Posture Alert App | Aaron Nathanael">
+  <a href="/" class="back-link">← Back to Home</a>
+  <main class="section">
+    <div class="project-detail">
+      <div
+        class="project-hero-image reveal"
+        style="background: linear-gradient(135deg, #e0f2f1, #b2dfdb)"
+      >
+      </div>
+      <h1
+        class="section-title reveal reveal-delay-1"
+        style="margin-bottom: 0; text-align: left; background: none; -webkit-text-fill-color: var(--text-color);"
+      >
+        Posture Alert App
+      </h1>
+
+      <div class="project-meta reveal reveal-delay-2">
+        <div class="meta-item">
+          <span class="meta-label">Context</span>
+          <span class="meta-value">Personal Project</span>
+        </div>
+        <div class="meta-item">
+          <span class="meta-label">Tech Stack</span>
+          <span class="meta-value">Python, MediaPipe, OpenCV, Pandas</span>
+        </div>
+      </div>
+
+      <div class="project-content-grid reveal reveal-delay-3">
+        <div class="content-block">
+          <h3>The Problem</h3>
+          <p>
+            Slouching causes back pain, but physical posture correctors are
+            annoying to wear. Software alternatives exist, but they usually
+            break if the user wears headphones or has a busy background.
+          </p>
+        </div>
+        <div class="content-block">
+          <h3>The Solution</h3>
+          <p>
+            A web app was built to track posture using a regular webcam. To fix
+            the headphone issue, tracking was mapped to eye coordinates instead
+            of ears. A calibration step was added to lock onto the user's size
+            and ignore background movement.
+          </p>
+        </div>
+      </div>
+
+      <div class="content-block reveal" style="margin-bottom: 48px">
+        <h3>Impact</h3>
+        <p>
+          A free, zero-hardware posture monitor that works in real-world
+          conditions. It alerts the user when they slouch and provides
+          exportable data on their session habits.
+        </p>
+        <a
+          href="https://github.com/CurvyCroissant/Posture-Alert.git"
+          target="_blank"
+          class="repo-link">View Repository →</a
+        >
+      </div>
+
+      <h3 style="margin-top: 48px; margin-bottom: 24px">Project Gallery</h3>
+      <div class="cert-grid">
+        <div class="reveal">
+          <a
+            href="/assets/img/projects/posture-alert/when-slouching.jpg"
+            class="cert-card"
+          >
+            <div
+              class="cert-image"
+              style="background-image: url('/assets/img/projects/posture-alert/when-slouching.jpg'); background-position: top;"
+            >
+            </div>
+            <div class="cert-info">
+              <h3 style="margin-bottom: 0">Slouch Detection</h3>
+            </div>
+          </a>
+        </div>
+        <div class="reveal reveal-delay-1">
+          <a
+            href="/assets/img/projects/posture-alert/when-using-headphones.jpg"
+            class="cert-card"
+          >
+            <div
+              class="cert-image"
+              style="background-image: url('/assets/img/projects/posture-alert/when-using-headphones.jpg'); background-position: top;"
+            >
+            </div>
+            <div class="cert-info">
+              <h3 style="margin-bottom: 0">Occlusion Handling</h3>
+            </div>
+          </a>
+        </div>
+        <div class="reveal reveal-delay-2">
+          <a
+            href="/assets/img/projects/posture-alert/with-background-noise.jpg"
+            class="cert-card"
+          >
+            <div
+              class="cert-image"
+              style="background-image: url('/assets/img/projects/posture-alert/with-background-noise.jpg'); background-position: top;"
+            >
+            </div>
+            <div class="cert-info">
+              <h3 style="margin-bottom: 0">Background Filtering</h3>
+            </div>
+          </a>
+        </div>
+        <div class="reveal reveal-delay-3">
+          <a
+            href="/assets/img/projects/posture-alert/when-looking-down.jpg"
+            class="cert-card"
+          >
+            <div
+              class="cert-image"
+              style="background-image: url('/assets/img/projects/posture-alert/when-looking-down.jpg'); background-position: top;"
+            >
+            </div>
+            <div class="cert-info">
+              <h3 style="margin-bottom: 0">Head Tilt Detection</h3>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </main>
+</Layout>

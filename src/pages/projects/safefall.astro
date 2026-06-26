@@ -1,0 +1,129 @@
+---
+import Layout from "../../layouts/Layout.astro";
+---
+
+<Layout title="SafeFall: Fall Detection App | Aaron Nathanael">
+  <a href="/" class="back-link">← Back to Home</a>
+  <main class="section">
+    <div class="project-detail">
+      <div
+        class="project-hero-image reveal"
+        style="background: linear-gradient(135deg, #7f1d1d, #450a0a)"
+      >
+      </div>
+      <h1
+        class="section-title reveal reveal-delay-1"
+        style="margin-bottom: 0; text-align: left; background: none; -webkit-text-fill-color: var(--text-color);"
+      >
+        SafeFall: Fall Detection App
+      </h1>
+
+      <div class="project-meta reveal reveal-delay-2">
+        <div class="meta-item">
+          <span class="meta-label">Context</span>
+          <span class="meta-value">Samsung Innovation Campus</span>
+        </div>
+        <div class="meta-item">
+          <span class="meta-label">Tech Stack</span>
+          <span class="meta-value">Python, YOLOv8, OpenCV, Streamlit</span>
+        </div>
+      </div>
+
+      <div class="project-content-grid reveal reveal-delay-3">
+        <div class="content-block">
+          <h3>The Problem</h3>
+          <p>
+            Elderly fall detection usually relies on smartwatches or pendants.
+            Unfortunately, these devices are easily forgotten, taken off to
+            charge, or actively avoided by the users who need them most.
+          </p>
+        </div>
+        <div class="content-block">
+          <h3>The Solution</h3>
+          <p>
+            A YOLOv8 computer vision model was trained to detect falls using
+            standard camera feeds. It tracks sudden vertical movement and logs
+            each event with a confidence score, sending alerts without any
+            physical interaction from the user.
+          </p>
+        </div>
+      </div>
+
+      <div class="content-block reveal" style="margin-bottom: 48px">
+        <h3>Impact</h3>
+        <p>
+          A non-intrusive safety net deployed to work continuously in the
+          background. The solution was selected as a Top Semi-Finalist
+          submission out of 1,898 participating teams in the Samsung Innovation
+          Campus program.
+        </p>
+        <a
+          href="https://github.com/CurvyCroissant/SafeFall.git"
+          target="_blank"
+          class="repo-link">View Repository →</a
+        >
+      </div>
+
+      <h3 style="margin-top: 48px; margin-bottom: 24px">Project Gallery</h3>
+      <div class="cert-grid">
+        <div class="reveal">
+          <a href="/assets/img/projects/safefall/website.jpg" class="cert-card">
+            <div
+              class="cert-image"
+              style="background-image: url('/assets/img/projects/safefall/website.jpg');"
+            >
+            </div>
+            <div class="cert-info">
+              <h3 style="margin-bottom: 0">Web Interface</h3>
+            </div>
+          </a>
+        </div>
+        <div class="reveal reveal-delay-1">
+          <a
+            href="/assets/img/projects/safefall/fall-detected.jpg"
+            class="cert-card"
+          >
+            <div
+              class="cert-image"
+              style="background-image: url('/assets/img/projects/safefall/fall-detected.jpg'); background-position: top;"
+            >
+            </div>
+            <div class="cert-info">
+              <h3 style="margin-bottom: 0">Fall Detected</h3>
+            </div>
+          </a>
+        </div>
+        <div class="reveal reveal-delay-2">
+          <a
+            href="/assets/img/projects/safefall/no-fall-detected.jpg"
+            class="cert-card"
+          >
+            <div
+              class="cert-image"
+              style="background-image: url('/assets/img/projects/safefall/no-fall-detected.jpg'); background-position: top;"
+            >
+            </div>
+            <div class="cert-info">
+              <h3 style="margin-bottom: 0">Normal State</h3>
+            </div>
+          </a>
+        </div>
+        <div class="reveal reveal-delay-3">
+          <a
+            href="/assets/img/projects/safefall/fall-detection-summary.jpg"
+            class="cert-card"
+          >
+            <div
+              class="cert-image"
+              style="background-image: url('/assets/img/projects/safefall/fall-detection-summary.jpg'); background-position: left;"
+            >
+            </div>
+            <div class="cert-info">
+              <h3 style="margin-bottom: 0">Event Logs</h3>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </main>
+</Layout>

@@ -1,0 +1,97 @@
+---
+import Layout from "../../layouts/Layout.astro";
+---
+
+<Layout title="Public Transport Route Planner | Aaron Nathanael">
+  <a href="/" class="back-link">← Back to Home</a>
+  <main class="section">
+    <div class="project-detail">
+      <div
+        class="project-hero-image reveal"
+        style="background: linear-gradient(135deg, #4c1d95, #2e1065)"
+      >
+      </div>
+      <h1
+        class="section-title reveal reveal-delay-1"
+        style="margin-bottom: 0; text-align: left; background: none; -webkit-text-fill-color: var(--text-color);"
+      >
+        Public Transport Route Planner
+      </h1>
+
+      <div class="project-meta reveal reveal-delay-2">
+        <div class="meta-item">
+          <span class="meta-label">Context</span>
+          <span class="meta-value">Academic Project</span>
+        </div>
+        <div class="meta-item">
+          <span class="meta-label">Tech Stack</span>
+          <span class="meta-value">Laravel, MySQL, Leaflet.js, Firebase</span>
+        </div>
+      </div>
+
+      <div class="project-content-grid reveal reveal-delay-3">
+        <div class="content-block">
+          <h3>The Problem</h3>
+          <p>
+            Public transport can be frustratingly unreliable. Commuters often
+            don't know if a bus is delayed or exactly when it will arrive, and a
+            single centralized source for this information rarely exists.
+          </p>
+        </div>
+        <div class="content-block">
+          <h3>The Solution</h3>
+          <p>
+            A full-stack app was built using Laravel and Leaflet.js. It pulls
+            live GPS coordinates from Firebase for real-time tracking. However,
+            to make it truly reliable, a fallback system was added: if the live
+            connection drops, it automatically defaults to static schedule data
+            in MySQL.
+          </p>
+        </div>
+      </div>
+
+      <div class="content-block reveal" style="margin-bottom: 48px">
+        <h3>Impact</h3>
+        <p>
+          Provides users with clear, interactive ETAs drawn directly on a map. A
+          feature was also added that calculates a historical "on-time" rating
+          for different routes, helping people make better commuting decisions.
+        </p>
+      </div>
+
+      <h3 style="margin-top: 48px; margin-bottom: 24px">Project Gallery</h3>
+      <div class="cert-grid">
+        <div class="reveal">
+          <a
+            href="/assets/img/projects/public-transport-route-planner/main-feature.jpg"
+            class="cert-card"
+          >
+            <div
+              class="cert-image"
+              style="background-image: url('/assets/img/projects/public-transport-route-planner/main-feature.jpg'); background-position: left;"
+            >
+            </div>
+            <div class="cert-info">
+              <h3 style="margin-bottom: 0">Main Route Planner</h3>
+            </div>
+          </a>
+        </div>
+        <div class="reveal reveal-delay-1">
+          <a
+            href="/assets/img/projects/public-transport-route-planner/account-registration.jpg"
+            class="cert-card"
+          >
+            <div
+              class="cert-image"
+              style="background-image: url('/assets/img/projects/public-transport-route-planner/account-registration.jpg'); background-position: top;"
+            >
+            </div>
+            <div class="cert-info">
+              <h3 style="margin-bottom: 0">Account Registration</h3>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </main>
+</Layout>

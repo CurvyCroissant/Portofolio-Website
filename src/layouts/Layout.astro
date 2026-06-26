@@ -1,0 +1,136 @@
+---
+import "../styles/global.css";
+const { title } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{title}</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="floating-controls">
+      <button id="term-trigger" class="theme-toggle" aria-label="Open Terminal">
+        <span class="toggle-text">Terminal</span>
+        <span class="mode-icon">
+          <svg
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <polyline points="4 17 10 11 4 5"></polyline>
+            <line x1="12" y1="19" x2="20" y2="19"></line>
+          </svg>
+        </span>
+      </button>
+      <button id="theme-toggle" class="theme-toggle" aria-label="Toggle Theme">
+        <span class="toggle-text">Light</span>
+        <span class="mode-icon">
+          <svg
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <circle cx="12" cy="12" r="5"></circle>
+            <line x1="12" y1="1" x2="12" y2="3"></line>
+            <line x1="12" y1="21" x2="12" y2="23"></line>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+            <line x1="1" y1="12" x2="3" y2="12"></line>
+            <line x1="21" y1="12" x2="23" y2="12"></line>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+          </svg>
+        </span>
+      </button>
+    </div>
+
+    <slot />
+
+    <div class="modal" id="cert-modal">
+      <button class="modal-close" aria-label="Close modal">
+        <svg
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          ><line x1="18" y1="6" x2="6" y2="18"></line><line
+            x1="6"
+            y1="6"
+            x2="18"
+            y2="18"></line></svg
+        >
+      </button>
+      <img class="modal-content" id="modal-image" src="" alt="Expanded View" />
+    </div>
+
+    <div class="terminal-overlay" id="terminal-overlay">
+      <div class="terminal-window">
+        <div class="terminal-header">
+          <div class="term-title">
+            <svg
+              width="14"
+              height="14"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              ><polyline points="4 17 10 11 4 5"></polyline><line
+                x1="12"
+                y1="19"
+                x2="20"
+                y2="19"></line></svg
+            >
+            Command Prompt
+          </div>
+          <div class="term-controls">
+            <div class="term-btn" id="term-min">&#8722;</div>
+            <div class="term-btn" id="term-max">&#9723;</div>
+            <div class="term-btn close" id="term-close">&#10005;</div>
+          </div>
+        </div>
+        <div class="terminal-body">
+          <div class="term-line" id="term-intro">
+            (c) Aaron Nathanael. All rights reserved.<br /><br />
+            Type 'help' to see available commands.
+          </div>
+          <div id="term-history"></div>
+          <div class="term-input-line">
+            <span class="term-prompt">C:\Aaron-Nathanael&gt;</span>
+            <input
+              type="text"
+              class="term-input"
+              id="term-input"
+              autocomplete="off"
+              spellcheck="false"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script
+      is:inline
+      src="https://cdnjs.cloudflare.com/ajax/libs/matter-js/0.19.0/matter.min.js"
+    ></script>
+    <script is:inline src="/assets/js/main.js"></script>
+  </body>
+</html>
