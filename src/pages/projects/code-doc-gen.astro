@@ -1,9 +1,10 @@
 ---
 import Layout from "../../layouts/Layout.astro";
+const base = import.meta.env.BASE_URL;
 ---
 
 <Layout title="Code Documentation Generator | Aaron Nathanael">
-  <a href="/" class="back-link">← Back to Home</a>
+  <a href={base} class="back-link">← Back to Home</a>
   <main class="section">
     <div class="project-detail">
       <div
@@ -68,12 +69,12 @@ import Layout from "../../layouts/Layout.astro";
       <div class="cert-grid">
         <div class="reveal">
           <a
-            href="/assets/img/projects/code-documentation-generator/website.jpg"
+            href={`${base}assets/img/projects/code-documentation-generator/website.jpg`}
             class="cert-card"
           >
             <div
               class="cert-image"
-              style="background-image: url('/assets/img/projects/code-documentation-generator/website.jpg');"
+              style={`background-image: url('${base}assets/img/projects/code-documentation-generator/website.jpg');`}
             >
             </div>
             <div class="cert-info">
@@ -83,12 +84,12 @@ import Layout from "../../layouts/Layout.astro";
         </div>
         <div class="reveal reveal-delay-1">
           <a
-            href="/assets/img/projects/code-documentation-generator/outputted-documentation.jpg"
+            href={`${base}assets/img/projects/code-documentation-generator/outputted-documentation.jpg`}
             class="cert-card"
           >
             <div
               class="cert-image"
-              style="background-image: url('/assets/img/projects/code-documentation-generator/outputted-documentation.jpg'); background-position: left;"
+              style={`background-image: url('${base}assets/img/projects/code-documentation-generator/outputted-documentation.jpg'); background-position: left;`}
             >
             </div>
             <div class="cert-info">

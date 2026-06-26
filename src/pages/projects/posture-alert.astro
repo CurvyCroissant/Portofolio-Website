@@ -1,9 +1,10 @@
 ---
 import Layout from "../../layouts/Layout.astro";
+const base = import.meta.env.BASE_URL;
 ---
 
 <Layout title="Posture Alert App | Aaron Nathanael">
-  <a href="/" class="back-link">← Back to Home</a>
+  <a href={base} class="back-link">← Back to Home</a>
   <main class="section">
     <div class="project-detail">
       <div
@@ -67,12 +68,12 @@ import Layout from "../../layouts/Layout.astro";
       <div class="cert-grid">
         <div class="reveal">
           <a
-            href="/assets/img/projects/posture-alert/when-slouching.jpg"
+            href={`${base}assets/img/projects/posture-alert/when-slouching.jpg`}
             class="cert-card"
           >
             <div
               class="cert-image"
-              style="background-image: url('/assets/img/projects/posture-alert/when-slouching.jpg'); background-position: top;"
+              style={`background-image: url('${base}assets/img/projects/posture-alert/when-slouching.jpg'); background-position: top;`}
             >
             </div>
             <div class="cert-info">
@@ -82,12 +83,12 @@ import Layout from "../../layouts/Layout.astro";
         </div>
         <div class="reveal reveal-delay-1">
           <a
-            href="/assets/img/projects/posture-alert/when-using-headphones.jpg"
+            href={`${base}assets/img/projects/posture-alert/when-using-headphones.jpg`}
             class="cert-card"
           >
             <div
               class="cert-image"
-              style="background-image: url('/assets/img/projects/posture-alert/when-using-headphones.jpg'); background-position: top;"
+              style={`background-image: url('${base}assets/img/projects/posture-alert/when-using-headphones.jpg'); background-position: top;`}
             >
             </div>
             <div class="cert-info">
@@ -97,12 +98,12 @@ import Layout from "../../layouts/Layout.astro";
         </div>
         <div class="reveal reveal-delay-2">
           <a
-            href="/assets/img/projects/posture-alert/with-background-noise.jpg"
+            href={`${base}assets/img/projects/posture-alert/with-background-noise.jpg`}
             class="cert-card"
           >
             <div
               class="cert-image"
-              style="background-image: url('/assets/img/projects/posture-alert/with-background-noise.jpg'); background-position: top;"
+              style={`background-image: url('${base}assets/img/projects/posture-alert/with-background-noise.jpg'); background-position: top;`}
             >
             </div>
             <div class="cert-info">
@@ -112,12 +113,12 @@ import Layout from "../../layouts/Layout.astro";
         </div>
         <div class="reveal reveal-delay-3">
           <a
-            href="/assets/img/projects/posture-alert/when-looking-down.jpg"
+            href={`${base}assets/img/projects/posture-alert/when-looking-down.jpg`}
             class="cert-card"
           >
             <div
               class="cert-image"
-              style="background-image: url('/assets/img/projects/posture-alert/when-looking-down.jpg'); background-position: top;"
+              style={`background-image: url('${base}assets/img/projects/posture-alert/when-looking-down.jpg'); background-position: top;`}
             >
             </div>
             <div class="cert-info">
