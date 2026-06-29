@@ -72,6 +72,38 @@ document.addEventListener("DOMContentLoaded", () => {
   const modalImg = document.getElementById("modal-image");
   const closeBtn = document.querySelector(".modal-close");
 
+  let scale = 1;
+  let posX = 0;
+  let posY = 0;
+  let isDragging = false;
+  let startX = 0,
+    startY = 0;
+
+  const setTransform = (smooth = false) => {
+    const w = modalImg.offsetWidth;
+    const h = modalImg.offsetHeight;
+    const vw = window.innerWidth;
+    const vh = window.innerHeight;
+
+    const scaledW = w * scale;
+    const scaledH = h * scale;
+
+    const maxPosX = scaledW > vw ? (scaledW - vw) / 2 : 0;
+    const maxPosY = scaledH > vh ? (scaledH - vh) / 2 : 0;
+
+    posX = Math.max(-maxPosX, Math.min(maxPosX, posX));
+    posY = Math.max(-maxPosY, Math.min(maxPosY, posY));
+
+    modalImg.style.transition = smooth ? "transform 0.15s ease-out" : "none";
+    modalImg.style.transform = `translate(calc(-50% + ${posX}px), calc(-50% + ${posY}px)) scale(${scale})`;
+
+    if (scale > 1) {
+      modalImg.style.cursor = isDragging ? "grabbing" : "grab";
+    } else {
+      modalImg.style.cursor = "grab";
+    }
+  };
+
   const lockScroll = () => {
     document.body.classList.add("no-scroll");
   };
@@ -91,21 +123,139 @@ document.addEventListener("DOMContentLoaded", () => {
             trigger.querySelector("img").getAttribute("src");
           modal.classList.add("active");
           lockScroll();
+
+          scale = 1;
+          posX = 0;
+          posY = 0;
+          modalImg.style.transition = "";
+          modalImg.style.transform = "";
+          modalImg.style.cursor = "grab";
         }
       });
     });
 
+  const closeModal = () => {
+    modal.classList.remove("active");
+    unlockScroll();
+    scale = 1;
+    posX = 0;
+    posY = 0;
+    modalImg.style.transition = "";
+    modalImg.style.transform = "";
+  };
+
   if (closeBtn && modal) {
-    closeBtn.addEventListener("click", () => {
-      modal.classList.remove("active");
-      unlockScroll();
-    });
+    closeBtn.addEventListener("click", closeModal);
     modal.addEventListener("click", (e) => {
-      if (e.target === modal) {
-        modal.classList.remove("active");
-        unlockScroll();
+      if (e.target === modal) closeModal();
+    });
+  }
+
+  if (modal && modalImg) {
+    // Custom Desktop Wheel Zoom
+    modal.addEventListener(
+      "wheel",
+      (e) => {
+        if (!modal.classList.contains("active")) return;
+        e.preventDefault();
+
+        const zoomSensitivity = 0.15;
+        const delta = e.deltaY < 0 ? 1 : -1;
+        const newScale = Math.max(
+          1,
+          Math.min(4, scale + delta * zoomSensitivity),
+        );
+
+        if (newScale !== scale) {
+          const mouseX = e.clientX - window.innerWidth / 2;
+          const mouseY = e.clientY - window.innerHeight / 2;
+          const ratio = newScale / scale;
+
+          posX = mouseX - (mouseX - posX) * ratio;
+          posY = mouseY - (mouseY - posY) * ratio;
+          scale = newScale;
+
+          setTransform(true);
+        }
+      },
+      { passive: false },
+    );
+
+    // Custom Desktop/Mobile Pan Dragging
+    modalImg.addEventListener("pointerdown", (e) => {
+      if (scale > 1) {
+        isDragging = true;
+        startX = e.clientX - posX;
+        startY = e.clientY - posY;
+        setTransform(false);
+        e.preventDefault();
       }
     });
+
+    window.addEventListener("pointermove", (e) => {
+      if (isDragging) {
+        posX = e.clientX - startX;
+        posY = e.clientY - startY;
+        setTransform(false);
+      }
+    });
+
+    window.addEventListener("pointerup", () => {
+      if (isDragging) {
+        isDragging = false;
+        setTransform(false);
+      }
+    });
+
+    // Custom Mobile Pinch-to-Zoom
+    let initialDistance = 0;
+    let initialScale = 1;
+
+    modal.addEventListener(
+      "touchstart",
+      (e) => {
+        if (e.touches.length === 2) {
+          const dx = e.touches[0].clientX - e.touches[1].clientX;
+          const dy = e.touches[0].clientY - e.touches[1].clientY;
+          initialDistance = Math.sqrt(dx * dx + dy * dy);
+          initialScale = scale;
+        }
+      },
+      { passive: false },
+    );
+
+    modal.addEventListener(
+      "touchmove",
+      (e) => {
+        if (!modal.classList.contains("active")) return;
+        if (scale > 1 && e.touches.length === 1) e.preventDefault();
+
+        if (e.touches.length === 2) {
+          e.preventDefault();
+          const dx = e.touches[0].clientX - e.touches[1].clientX;
+          const dy = e.touches[0].clientY - e.touches[1].clientY;
+          const distance = Math.sqrt(dx * dx + dy * dy);
+          const ratio = distance / initialDistance;
+
+          const newScale = Math.max(1, Math.min(4, initialScale * ratio));
+
+          if (newScale !== scale) {
+            const centerX = (e.touches[0].clientX + e.touches[1].clientX) / 2;
+            const centerY = (e.touches[0].clientY + e.touches[1].clientY) / 2;
+            const mouseX = centerX - window.innerWidth / 2;
+            const mouseY = centerY - window.innerHeight / 2;
+            const scaleRatio = newScale / scale;
+
+            posX = mouseX - (mouseX - posX) * scaleRatio;
+            posY = mouseY - (mouseY - posY) * scaleRatio;
+            scale = newScale;
+
+            setTransform(false);
+          }
+        }
+      },
+      { passive: false },
+    );
   }
 
   const revealElements = document.querySelectorAll(".reveal");
@@ -174,8 +324,7 @@ document.addEventListener("DOMContentLoaded", () => {
       }
       if (e.key === "Escape") {
         if (modal && modal.classList.contains("active")) {
-          modal.classList.remove("active");
-          unlockScroll();
+          closeModal();
         } else if (termOverlay.classList.contains("active")) {
           closeTerminal();
         }
@@ -340,7 +489,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     Composite.add(engine.world, [ground, topWall, leftWall, rightWall]);
 
-    const cols = 3;
+    const cols = width < 500 ? 2 : 3;
     const cellWidth = width / cols;
     const cellHeight = height / Math.ceil(bodyData.length / cols);
 

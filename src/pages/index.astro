@@ -14,6 +14,8 @@ const base = import.meta.env.BASE_URL;
           src={`${base}/assets/img/profile/self-image.jpg`}
           alt="Aaron Nathanael"
           class="profile-img"
+          loading="lazy"
+          decoding="async"
         />
       </a>
       <h1 class="fade-in delay-1">Aaron Nathanael</h1>
@@ -22,6 +24,145 @@ const base = import.meta.env.BASE_URL;
         Machine Learning, Data Science, and Web Development. Currently in an
         exchange program at Shibaura Institute of Technology, Tokyo.
       </p>
+    </section>
+
+    <section id="experience" class="section reveal">
+      <h2 class="section-title">Experience</h2>
+      <div class="list-grid">
+        <div class="list-item reveal">
+          <div class="list-header">
+            <span class="list-title">Tour Guide</span>
+            <span class="list-date">Jun 2026 - Present</span>
+          </div>
+          <div class="list-subtitle">Yummy Guide</div>
+          <div class="list-content">
+            Provide comprehensive guides entirely in English of the Ghibli
+            Museum in Mitaka, Tokyo. The guests are mostly tourists travelling
+            in Japan.
+          </div>
+        </div>
+        <div class="list-item reveal">
+          <div class="list-header">
+            <span class="list-title">Academic Events Activist</span>
+            <span class="list-date">Mar 2025 - Dec 2025</span>
+          </div>
+          <div class="list-subtitle">
+            Himpunan Mahasiswa Teknik Informatika (HIMTI), BINUS University
+          </div>
+          <div class="list-content">
+            Created and carried out events under HIMTI.
+          </div>
+        </div>
+        <div class="list-item reveal">
+          <div class="list-header">
+            <span class="list-title">Web Development Activist</span>
+            <span class="list-date">Mar 2024 - Dec 2024</span>
+          </div>
+          <div class="list-subtitle">
+            Himpunan Mahasiswa Teknik Informatika (HIMTI), BINUS University
+          </div>
+          <div class="list-content">
+            Developed the frontend of HIMTI's website and other events using
+            HTML, CSS, and JS.
+          </div>
+          <a
+            href={`${base}/assets/img/certificates/himti-web-development-activist.jpg`}
+            class="proof-link">View Certificate</a
+          >
+        </div>
+        <div class="list-item reveal">
+          <div class="list-header">
+            <span class="list-title">Semi Finalist</span>
+            <span class="list-date">Feb 2024 - Oct 2024</span>
+          </div>
+          <div class="list-subtitle">
+            Samsung Innovation Campus by Skilvul (Batch 5)
+          </div>
+          <div class="list-content">
+            Completed the intensive bootcamps for AI/ML, Python, and IoT.
+            Delivered "SafeFall", which is a real-time fall detection app using
+            YOLO computer vision models. Successfully reached the semi finals as
+            the top 80 out of 1,898 participants.
+          </div>
+          <a
+            href={`${base}/assets/img/certificates/sic5-semi-final.jpg`}
+            class="proof-link">View Certificate</a
+          >
+        </div>
+        <div class="list-item reveal">
+          <div class="list-header">
+            <span class="list-title">Learning & Training Activist</span>
+            <span class="list-date">Jan 2024 - Jun 2024</span>
+          </div>
+          <div class="list-subtitle">
+            Bina Nusantara Computer Club (BNCC), BINUS University
+          </div>
+          <div class="list-content">
+            Planned out and created comprehensive computer science learning
+            modules for university students.
+          </div>
+        </div>
+        <div class="list-item reveal">
+          <div class="list-header">
+            <span class="list-title">Participant</span>
+            <span class="list-date">Jul 2023 - Aug 2023</span>
+          </div>
+          <div class="list-subtitle">
+            iOS Foundation by Apple Developer Academy
+          </div>
+          <div class="list-content">
+            Developed an AR-based iOS mobile app which is able to project
+            traditional Balinese house designs onto real-world surfaces.
+          </div>
+          <a
+            href={`${base}/assets/img/certificates/ios-foundation.jpg`}
+            class="proof-link">View Certificate</a
+          >
+        </div>
+      </div>
+    </section>
+
+    <section id="education" class="section reveal">
+      <h2 class="section-title">Education</h2>
+      <div class="list-grid">
+        <div class="list-item reveal">
+          <div class="list-header">
+            <span class="list-title">Shibaura Institute of Technology</span>
+            <span class="list-date">Apr 2026 - Jul 2026</span>
+          </div>
+          <div class="list-subtitle">Student Exchange Program</div>
+          <div class="list-content">
+            Partook in a Student Exchange Program at Shibaura Institute of
+            Technology, Tokyo. Learned plenty about engineering in Japan, as
+            well as cross-cultural perspectives.
+          </div>
+        </div>
+        <div class="list-item reveal">
+          <div class="list-header">
+            <span class="list-title">BINUS University</span>
+            <span class="list-date">Sep 2023 - Present</span>
+          </div>
+          <div class="list-subtitle">Bachelor of Computer Science</div>
+          <div class="list-content">
+            Computer Science Undergraduate with a cumulative GPA of 3.92. Within
+            the Global Class Program, meaning that everything is presented in
+            English, along with a semester of International Study Exchange.
+            Currently pursuing Machine Learning, Data Science, and Web
+            Development.
+          </div>
+        </div>
+        <div class="list-item reveal">
+          <div class="list-header">
+            <span class="list-title">SMAK 1 BPK PENABUR Jakarta</span>
+            <span class="list-date">Jul 2020 - Jun 2023</span>
+          </div>
+          <div class="list-subtitle">High School Diplomat</div>
+          <div class="list-content">
+            General high school in the Mathematics and Natural Sciences (MIPA)
+            major.
+          </div>
+        </div>
+      </div>
     </section>
 
     <section id="skills" class="section reveal">
@@ -42,7 +183,7 @@ const base = import.meta.env.BASE_URL;
     </section>
 
     <section id="projects" class="section reveal">
-      <h2 class="section-title">Selected Work</h2>
+      <h2 class="section-title">Projects</h2>
       <div class="project-grid">
         <div class="reveal">
           <a href={`${base}/projects/posture-alert`} class="project-card">
@@ -99,101 +240,6 @@ const base = import.meta.env.BASE_URL;
               </p>
             </div>
           </a>
-        </div>
-      </div>
-    </section>
-
-    <section id="experience" class="section reveal">
-      <h2 class="section-title">Experience</h2>
-      <div class="list-grid">
-        <div class="list-item reveal">
-          <div class="list-header">
-            <span class="list-title">Semi-Finalist (Top 1,898)</span>
-            <span class="list-date">Feb 2024 - Oct 2024</span>
-          </div>
-          <div class="list-subtitle">
-            Samsung Innovation Campus by Skilvul (Batch 5)
-          </div>
-          <div class="list-content">
-            Intensive AI/ML, Python, and IoT bootcamps completed. Delivered a
-            real-time fall detection application using YOLO computer vision
-            models.
-          </div>
-          <a
-            href={`${base}/assets/img/certificates/sic5-semi-final.jpg`}
-            class="proof-link">View Certificate &rarr;</a
-          >
-        </div>
-        <div class="list-item reveal">
-          <div class="list-header">
-            <span class="list-title">Participant</span>
-            <span class="list-date">Jul 2023 - Aug 2023</span>
-          </div>
-          <div class="list-subtitle">
-            Apple Developer Academy (iOS Foundation)
-          </div>
-          <div class="list-content">
-            Engineered an AR-based iOS mobile application capable of projecting
-            traditional Balinese house designs onto real-world surfaces.
-          </div>
-          <a
-            href={`${base}/assets/img/certificates/ios-foundation.jpg`}
-            class="proof-link">View Certificate &rarr;</a
-          >
-        </div>
-        <div class="list-item reveal">
-          <div class="list-header">
-            <span class="list-title">Academic & Web Development Activist</span>
-            <span class="list-date">Mar 2024 - Dec 2025</span>
-          </div>
-          <div class="list-subtitle">HIMTI BINUS University</div>
-          <div class="list-content">
-            Architected the frontend infrastructure for the official HIMTI
-            website and systematically coordinated technical events for
-            students.
-          </div>
-          <a
-            href={`${base}/assets/img/certificates/himti-web-development-activist.jpg`}
-            class="proof-link">View Certificate &rarr;</a
-          >
-        </div>
-        <div class="list-item reveal">
-          <div class="list-header">
-            <span class="list-title">Learning & Training Activist</span>
-            <span class="list-date">Jan 2024 - Jun 2024</span>
-          </div>
-          <div class="list-subtitle">Bina Nusantara Computer Club (BNCC)</div>
-          <div class="list-content">
-            Authored and structured comprehensive computer science learning
-            modules utilized by fellow university students.
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="education" class="section reveal">
-      <h2 class="section-title">Education</h2>
-      <div class="list-grid">
-        <div class="list-item reveal">
-          <div class="list-header">
-            <span class="list-title">Shibaura Institute of Technology</span>
-            <span class="list-date">Current</span>
-          </div>
-          <div class="list-subtitle">Tokyo, Japan</div>
-          <div class="list-content">
-            International Student Exchange Program focused on expanding
-            cross-cultural engineering perspectives.
-          </div>
-        </div>
-        <div class="list-item reveal">
-          <div class="list-header">
-            <span class="list-title">BINUS University</span>
-            <span class="list-date">2023 - Present</span>
-          </div>
-          <div class="list-subtitle">Bachelor of Computer Science</div>
-          <div class="list-content">
-            Specializing in Artificial Intelligence and Web Development.
-          </div>
         </div>
       </div>
     </section>
