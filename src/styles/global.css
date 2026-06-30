@@ -11,6 +11,10 @@
   --reveal-offset: 30px;
   --reveal-duration: 0.9s;
   --reveal-ease: cubic-bezier(0.22, 1, 0.36, 1);
+
+  /* Centralized CSS Variables for physics items to prevent mobile transition sticking */
+  --pill-bg: rgba(20, 20, 20, 0.3);
+  --pill-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
 
 [data-theme="light"] {
@@ -22,6 +26,9 @@
   --border-hover: rgba(0, 0, 0, 0.15);
   --accent-color: #1a1a1a;
   --accent-glow: rgba(26, 26, 26, 0.1);
+
+  --pill-bg: rgba(255, 255, 255, 0.5);
+  --pill-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
 }
 
 * {
@@ -224,7 +231,7 @@ button:focus-visible {
   border: 1px solid var(--border-color);
   font-size: clamp(12px, 3vw, 14px);
   font-weight: 500;
-  background: rgba(20, 20, 20, 0.3);
+  background: var(--pill-bg);
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
   letter-spacing: 0.02em;
@@ -235,10 +242,11 @@ button:focus-visible {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-}
-
-[data-theme="light"] .skill-pill {
-  background: rgba(255, 255, 255, 0.5);
+  /* Explicit transition restricts to color and shadow, preventing layout updates from freezing it */
+  transition:
+    background-color 0.5s ease,
+    color 0.5s ease,
+    box-shadow 0.5s ease;
 }
 
 .physics-active .skill-pill {
@@ -248,12 +256,8 @@ button:focus-visible {
   margin: 0;
   user-select: none;
   z-index: 10;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  box-shadow: var(--pill-shadow);
   pointer-events: none;
-}
-
-[data-theme="light"] .physics-active .skill-pill {
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
 }
 
 .project-grid {

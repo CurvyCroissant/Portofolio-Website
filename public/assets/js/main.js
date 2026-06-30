@@ -25,6 +25,7 @@ document.addEventListener("DOMContentLoaded", () => {
       const currentTheme =
         document.documentElement.getAttribute("data-theme") || "dark";
       setTheme(currentTheme === "dark" ? "light" : "dark");
+      themeToggle.blur(); // Removes focus state on mobile after tap
     });
   }
 
@@ -142,6 +143,13 @@ document.addEventListener("DOMContentLoaded", () => {
     posY = 0;
     modalImg.style.transition = "";
     modalImg.style.transform = "";
+
+    // Clear image source after modal fade-out completes to prevent flashing
+    setTimeout(() => {
+      if (!modal.classList.contains("active")) {
+        modalImg.src = "";
+      }
+    }, 400);
   };
 
   if (closeBtn && modal) {
@@ -262,7 +270,10 @@ document.addEventListener("DOMContentLoaded", () => {
   const revealObserver = new IntersectionObserver(
     (entries) => {
       entries.forEach((entry) => {
-        entry.target.classList.toggle("active", entry.isIntersecting);
+        if (entry.isIntersecting) {
+          // Changed from toggle to add to prevent infinite layout bounce loop
+          entry.target.classList.add("active");
+        }
       });
     },
     { threshold: 0.1 },
