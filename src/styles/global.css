@@ -12,7 +12,7 @@
   --reveal-duration: 0.9s;
   --reveal-ease: cubic-bezier(0.22, 1, 0.36, 1);
 
-  --pill-bg: rgba(20, 20, 20, 0.3);
+  --pill-bg: rgba(30, 30, 30, 0.95);
   --pill-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
 
@@ -26,7 +26,7 @@
   --accent-color: #1a1a1a;
   --accent-glow: rgba(26, 26, 26, 0.1);
 
-  --pill-bg: rgba(255, 255, 255, 0.5);
+  --pill-bg: rgba(250, 250, 250, 0.95);
   --pill-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
 }
 
@@ -113,7 +113,6 @@ button:focus-visible {
   box-shadow: 0 8px 24px var(--accent-glow);
 }
 
-/* Nudges the text upward to ensure perfect vertical center alignment with the SVG icons */
 .toggle-text {
   line-height: 1;
   transform: translateY(-1px);
@@ -288,8 +287,6 @@ button:focus-visible {
   font-size: clamp(12px, 3vw, 14px);
   font-weight: 500;
   background: var(--pill-bg);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
   letter-spacing: 0.02em;
   color: var(--text-color);
   white-space: nowrap !important;
@@ -298,6 +295,8 @@ button:focus-visible {
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
   transition:
     background-color 0.5s ease,
     color 0.5s ease,
@@ -985,7 +984,6 @@ html[lang="ja"] .term-title-text::before {
     height: 85vh;
   }
 
-  /* Mobile Language Dropdown Adjustments */
   .lang-dropdown-menu {
     transform: translateX(-80%) translateY(-10px);
     right: 0;

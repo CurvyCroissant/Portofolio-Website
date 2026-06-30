@@ -56,7 +56,6 @@ document.addEventListener("DOMContentLoaded", () => {
       ja: "ビヌス大学のコンピュータサイエンス学部生。機械学習、データサイエンス、ウェブ開発を積極的に学んでいます。現在、東京の芝浦工業大学で交換留学プログラムに参加しています。",
     },
 
-    // Dates Translated
     "date-yummy": {
       en: "Jun 2026 - Present",
       id: "Jun 2026 - Sekarang",
@@ -1037,7 +1036,8 @@ document.addEventListener("DOMContentLoaded", () => {
       bodyData.forEach((data) => {
         data.pill.style.left = `${data.body.position.x}px`;
         data.pill.style.top = `${data.body.position.y}px`;
-        data.pill.style.transform = `translate(-50%, -50%)`;
+        // Forced hardware acceleration for mobile WebKit paint fixes
+        data.pill.style.transform = `translate(-50%, -50%) translateZ(0)`;
       });
     });
 
