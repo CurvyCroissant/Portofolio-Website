@@ -12,7 +12,6 @@
   --reveal-duration: 0.9s;
   --reveal-ease: cubic-bezier(0.22, 1, 0.36, 1);
 
-  /* Centralized CSS Variables for physics items to prevent mobile transition sticking */
   --pill-bg: rgba(20, 20, 20, 0.3);
   --pill-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
@@ -57,25 +56,21 @@ body.no-scroll {
   overflow: hidden;
   touch-action: none;
 }
-
 a,
 button {
   outline: none;
   -webkit-tap-highlight-color: transparent;
 }
-
 a:focus-visible,
 button:focus-visible {
   outline: 2px solid var(--accent-color);
   outline-offset: 4px;
 }
-
 .lightbox-trigger {
   display: inline-block;
   cursor: pointer;
   outline: none;
 }
-
 .lightbox-trigger:focus-visible {
   outline: none;
 }
@@ -118,16 +113,83 @@ button:focus-visible {
   box-shadow: 0 8px 24px var(--accent-glow);
 }
 
+/* Nudges the text upward to ensure perfect vertical center alignment with the SVG icons */
+.toggle-text {
+  line-height: 1;
+  transform: translateY(-1px);
+}
+
+.mode-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .mode-icon svg {
   width: 16px;
   height: 16px;
   stroke: var(--text-color);
   transition: var(--transition);
 }
-
 .theme-toggle:hover .mode-icon svg,
 .theme-toggle:focus-visible .mode-icon svg {
   stroke: var(--accent-color);
+}
+
+.lang-dropdown-container {
+  position: relative;
+}
+.lang-dropdown-menu {
+  position: absolute;
+  top: calc(100% + 12px);
+  left: 50%;
+  transform: translateX(-50%) translateY(-10px);
+  background: rgba(20, 20, 20, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  padding: 6px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  opacity: 0;
+  pointer-events: none;
+  transition: var(--transition);
+  box-shadow: 0 12px 24px var(--accent-glow);
+  min-width: 170px;
+}
+[data-theme="light"] .lang-dropdown-menu {
+  background: rgba(255, 255, 255, 0.85);
+}
+.lang-dropdown-menu.active {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateX(-50%) translateY(0);
+}
+.lang-option {
+  background: transparent;
+  border: none;
+  color: var(--text-color);
+  padding: 10px 14px;
+  text-align: center;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 500;
+  font-family: inherit;
+  transition: background 0.2s;
+}
+.lang-option:hover {
+  background: var(--card-bg-hover);
+}
+.lang-option.active-lang {
+  background: rgba(255, 255, 255, 0.1);
+  color: var(--accent-color);
+  font-weight: 700;
+}
+[data-theme="light"] .lang-option.active-lang {
+  background: rgba(0, 0, 0, 0.05);
 }
 
 .hero {
@@ -157,7 +219,6 @@ button:focus-visible {
   transform: scale(1.05);
   border-color: var(--accent-color);
 }
-
 .hero h1 {
   font-size: clamp(36px, 8vw, 64px);
   font-weight: 800;
@@ -166,7 +227,6 @@ button:focus-visible {
   color: var(--text-color);
   line-height: 1.1;
 }
-
 .hero p {
   font-size: clamp(16px, 2.5vw, 20px);
   opacity: 0.7;
@@ -182,7 +242,6 @@ button:focus-visible {
   margin: 0 auto;
   position: relative;
 }
-
 .section-title {
   font-size: clamp(28px, 6vw, 36px);
   text-align: center;
@@ -191,7 +250,6 @@ button:focus-visible {
   letter-spacing: -0.03em;
   color: var(--text-color);
 }
-
 #skills .section-title {
   margin-bottom: 32px;
 }
@@ -213,14 +271,12 @@ button:focus-visible {
   transition: var(--transition);
   touch-action: pan-y;
 }
-
 .skills-container.physics-active {
   min-height: 270px;
   overflow: hidden;
   padding: 0;
   cursor: grab;
 }
-
 .skills-container.physics-active:active {
   cursor: grabbing;
 }
@@ -242,7 +298,6 @@ button:focus-visible {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  /* Explicit transition restricts to color and shadow, preventing layout updates from freezing it */
   transition:
     background-color 0.5s ease,
     color 0.5s ease,
@@ -265,7 +320,6 @@ button:focus-visible {
   grid-template-columns: repeat(auto-fit, minmax(min(100%, 340px), 1fr));
   gap: 32px;
 }
-
 .project-card {
   background: var(--card-bg);
   border-radius: 20px;
@@ -280,7 +334,6 @@ button:focus-visible {
   position: relative;
   overflow: hidden;
 }
-
 .project-card::after {
   content: "";
   position: absolute;
@@ -293,31 +346,26 @@ button:focus-visible {
   transition: var(--transition);
   pointer-events: none;
 }
-
 .project-card:hover,
 .project-card:focus-visible {
   transform: translateY(-8px);
   border-color: var(--border-hover);
   box-shadow: 0 20px 40px var(--accent-glow);
 }
-
 .project-card:hover::after,
 .project-card:focus-visible::after {
   opacity: 1;
 }
-
 .project-image {
   height: 240px;
   background: #222;
   transition: transform 0.8s cubic-bezier(0.25, 1, 0.5, 1);
   border-bottom: 1px solid var(--border-color);
 }
-
 .project-card:hover .project-image,
 .project-card:focus-visible .project-image {
   transform: scale(1.03);
 }
-
 .project-info {
   padding: 40px 32px;
   display: flex;
@@ -326,14 +374,12 @@ button:focus-visible {
   justify-content: flex-start;
   z-index: 1;
 }
-
 .project-info h3 {
   font-size: clamp(18px, 4vw, 22px);
   margin-bottom: 12px;
   font-weight: 700;
   letter-spacing: -0.02em;
 }
-
 .project-info p {
   font-size: 15px;
   opacity: 0.65;
@@ -351,7 +397,6 @@ button:focus-visible {
   transform: translate(0, 0);
   margin-left: 4px;
 }
-
 .project-card:hover .project-info h3::after,
 .project-card:focus-visible .project-info h3::after,
 .cert-card:hover .cert-info h3::after,
@@ -370,7 +415,6 @@ button:focus-visible {
   max-width: 1100px;
   margin: 0 auto;
 }
-
 .cert-card {
   background: var(--card-bg);
   border-radius: 16px;
@@ -382,14 +426,12 @@ button:focus-visible {
   text-decoration: none;
   color: inherit;
 }
-
 .cert-card:hover,
 .cert-card:focus-visible {
   transform: translateY(-6px);
   border-color: var(--border-hover);
   box-shadow: 0 16px 32px var(--accent-glow);
 }
-
 .cert-image {
   width: 100%;
   height: 220px;
@@ -398,23 +440,19 @@ button:focus-visible {
   border-bottom: 1px solid var(--border-color);
   transition: transform 0.8s cubic-bezier(0.25, 1, 0.5, 1);
 }
-
 .cert-card:hover .cert-image,
 .cert-card:focus-visible .cert-image {
   transform: scale(1.03);
 }
-
 .cert-info {
   padding: 24px;
 }
-
 .cert-info h3 {
   font-size: 16px;
   font-weight: 600;
   margin-bottom: 8px;
   letter-spacing: -0.01em;
 }
-
 .cert-info p {
   font-size: 14px;
   opacity: 0.6;
@@ -427,7 +465,6 @@ button:focus-visible {
   max-width: 800px;
   margin: 0 auto;
 }
-
 .list-item {
   display: flex;
   flex-direction: column;
@@ -436,7 +473,6 @@ button:focus-visible {
   border: 1px solid var(--border-color);
   border-radius: 20px;
 }
-
 .list-header {
   display: flex;
   justify-content: space-between;
@@ -445,13 +481,11 @@ button:focus-visible {
   gap: 12px;
   margin-bottom: 12px;
 }
-
 .list-title {
   font-size: 18px;
   font-weight: 700;
   letter-spacing: -0.01em;
 }
-
 .list-date {
   font-size: 14px;
   opacity: 0.5;
@@ -459,7 +493,6 @@ button:focus-visible {
   letter-spacing: 0.02em;
   text-transform: uppercase;
 }
-
 .list-subtitle {
   font-size: 15px;
   color: var(--text-color);
@@ -467,13 +500,11 @@ button:focus-visible {
   margin-bottom: 16px;
   font-weight: 500;
 }
-
 .list-content {
   font-size: 15px;
   opacity: 0.65;
   line-height: 1.7;
 }
-
 .proof-link {
   display: inline-flex;
   align-items: center;
@@ -486,7 +517,6 @@ button:focus-visible {
   transition: var(--transition);
   width: fit-content;
 }
-
 .proof-link:hover,
 .proof-link:focus-visible {
   transform: translateX(6px);
@@ -502,7 +532,6 @@ button:focus-visible {
   justify-content: center;
   position: relative;
 }
-
 .footer-content {
   display: flex;
   flex-direction: column;
@@ -511,14 +540,12 @@ button:focus-visible {
   max-width: 1100px;
   width: 100%;
 }
-
 .social-links {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   gap: 32px;
 }
-
 .social-link {
   color: var(--text-color);
   opacity: 0.5;
@@ -529,19 +556,16 @@ button:focus-visible {
   gap: 12px;
   cursor: pointer;
 }
-
 .social-link:hover,
 .social-link:focus-visible {
   opacity: 1;
   transform: translateY(-3px);
   color: var(--accent-color);
 }
-
 .link-text {
   font-size: clamp(14px, 3.5vw, 15px);
   font-weight: 500;
 }
-
 .footer-text {
   font-size: 14px;
   opacity: 0.4;
@@ -563,14 +587,12 @@ button:focus-visible {
   z-index: 1000;
   letter-spacing: 0.02em;
 }
-
 .back-link:hover,
 .back-link:focus-visible {
   opacity: 1;
   color: var(--accent-color);
   transform: translateY(-4px);
 }
-
 .repo-link {
   display: inline-block;
   color: var(--text-color);
@@ -585,7 +607,6 @@ button:focus-visible {
   font-size: 14px;
   letter-spacing: 0.02em;
 }
-
 .repo-link:hover,
 .repo-link:focus-visible {
   transform: translateY(-4px);
@@ -612,12 +633,10 @@ button:focus-visible {
   transition: opacity 0.4s ease;
   padding: 20px;
 }
-
 .modal.active {
   opacity: 1;
   pointer-events: auto;
 }
-
 .modal-content {
   position: absolute;
   top: 50%;
@@ -633,11 +652,9 @@ button:focus-visible {
   cursor: grab;
   touch-action: none;
 }
-
 .modal.active .modal-content {
   transform: translate(-50%, -50%) scale(1);
 }
-
 .modal-close {
   position: absolute;
   top: 16px;
@@ -655,7 +672,6 @@ button:focus-visible {
   transition: var(--transition);
   z-index: 2001;
 }
-
 .modal-close:hover,
 .modal-close:focus-visible {
   background: #fff;
@@ -672,7 +688,6 @@ button:focus-visible {
   border-top: 1px solid var(--border-color);
   border-bottom: 1px solid var(--border-color);
 }
-
 .meta-item {
   display: flex;
   flex-direction: column;
@@ -680,7 +695,6 @@ button:focus-visible {
   flex: 1;
   min-width: 140px;
 }
-
 .meta-label {
   font-size: 12px;
   text-transform: uppercase;
@@ -688,26 +702,22 @@ button:focus-visible {
   opacity: 0.4;
   font-weight: 700;
 }
-
 .meta-value {
   font-size: 16px;
   font-weight: 500;
 }
-
 .project-content-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 64px;
   margin-bottom: 64px;
 }
-
 .content-block h3 {
   font-size: 20px;
   margin-bottom: 20px;
   font-weight: 700;
   letter-spacing: -0.01em;
 }
-
 .content-block p {
   font-size: 16px;
   opacity: 0.65;
@@ -728,12 +738,10 @@ button:focus-visible {
   pointer-events: none;
   transition: opacity 0.3s ease;
 }
-
 .terminal-overlay.active {
   opacity: 1;
   pointer-events: auto;
 }
-
 .terminal-window {
   position: absolute;
   top: 50%;
@@ -752,13 +760,11 @@ button:focus-visible {
   box-shadow: 0 30px 60px rgba(0, 0, 0, 0.6);
   transition: all 0.4s cubic-bezier(0.22, 1, 0.36, 1);
 }
-
 [data-theme="light"] .terminal-window {
   background: rgba(250, 250, 250, 0.95);
   border: 1px solid rgba(0, 0, 0, 0.1);
   box-shadow: 0 30px 60px rgba(0, 0, 0, 0.2);
 }
-
 .terminal-window.minimized {
   top: 100%;
   transform: translate(-50%, calc(-100% - 24px));
@@ -766,12 +772,10 @@ button:focus-visible {
   height: 45px;
   min-height: auto;
 }
-
 .terminal-window.minimized .terminal-body {
   opacity: 0;
   pointer-events: none;
 }
-
 .terminal-window.fullscreen {
   top: 0;
   left: 0;
@@ -782,7 +786,6 @@ button:focus-visible {
   border-radius: 0;
   border: none;
 }
-
 .terminal-header {
   background: rgba(30, 30, 30, 0.95);
   padding: 14px 20px;
@@ -793,7 +796,6 @@ button:focus-visible {
   align-items: center;
   justify-content: space-between;
 }
-
 [data-theme="light"] .terminal-header {
   background: rgba(235, 235, 235, 0.95);
   border-bottom: 1px solid rgba(0, 0, 0, 0.05);
@@ -807,15 +809,15 @@ button:focus-visible {
   gap: 8px;
   color: #cccccc;
 }
-
 [data-theme="light"] .term-title {
   color: #333333;
 }
-
 .term-title-text::before {
   content: "Command Prompt";
 }
-
+html[lang="ja"] .term-title-text::before {
+  content: "コマンドプロンプト";
+}
 .terminal-window.minimized .term-title-text::before {
   content: "CMD";
 }
@@ -824,7 +826,6 @@ button:focus-visible {
   display: flex;
   height: 100%;
 }
-
 .term-btn {
   width: 46px;
   height: 100%;
@@ -836,25 +837,17 @@ button:focus-visible {
   font-size: 14px;
   transition: background 0.2s;
 }
-
 [data-theme="light"] .term-btn {
   color: #555555;
 }
-
 .term-btn:hover {
   background: #333333;
 }
-
 [data-theme="light"] .term-btn:hover {
   background: #cccccc;
   color: #111111;
 }
-
-.term-btn.close:hover {
-  background: #e81123;
-  color: white;
-}
-
+.term-btn.close:hover,
 [data-theme="light"] .term-btn.close:hover {
   background: #e81123;
   color: white;
@@ -870,34 +863,28 @@ button:focus-visible {
   font-size: clamp(12px, 3vw, 14px);
   transition: opacity 0.2s;
 }
-
 [data-theme="light"] .terminal-body {
   background: #ffffff;
   color: #333333;
 }
-
 .term-line {
   margin-bottom: 8px;
   white-space: pre-wrap;
   line-height: 1.5;
   word-break: break-word;
 }
-
 .term-input-line {
   display: flex;
   gap: 8px;
   margin-top: 8px;
   flex-wrap: wrap;
 }
-
 .term-prompt {
   color: #cccccc;
 }
-
 [data-theme="light"] .term-prompt {
   color: #555555;
 }
-
 .term-input {
   background: transparent;
   border: none;
@@ -908,7 +895,6 @@ button:focus-visible {
   min-width: 100px;
   outline: none;
 }
-
 [data-theme="light"] .term-input {
   color: #111111;
 }
@@ -916,7 +902,6 @@ button:focus-visible {
 .fade-in {
   animation: fadeInUp 1.2s cubic-bezier(0.22, 1, 0.36, 1) forwards;
 }
-
 .reveal {
   opacity: 0;
   transform: translateY(var(--reveal-offset));
@@ -925,12 +910,10 @@ button:focus-visible {
     transform var(--reveal-duration) var(--reveal-ease);
   will-change: opacity, transform;
 }
-
 .reveal.active {
   opacity: 1;
   transform: translateY(0);
 }
-
 .reveal-delay-1 {
   transition-delay: 0.1s;
 }
@@ -1000,5 +983,15 @@ button:focus-visible {
   }
   .terminal-window {
     height: 85vh;
+  }
+
+  /* Mobile Language Dropdown Adjustments */
+  .lang-dropdown-menu {
+    transform: translateX(-80%) translateY(-10px);
+    right: 0;
+    left: auto;
+  }
+  .lang-dropdown-menu.active {
+    transform: translateX(-80%) translateY(0);
   }
 }

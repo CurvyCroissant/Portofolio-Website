@@ -19,7 +19,11 @@ const base = import.meta.env.BASE_URL;
         />
       </a>
       <h1 class="fade-in delay-1">Aaron Nathanael</h1>
-      <p class="fade-in delay-2" style="margin-top: 16px;">
+      <p
+        class="fade-in delay-2"
+        style="margin-top: 16px;"
+        data-i18n="hero-desc"
+      >
         Computer Science undergraduate at BINUS University. Actively learning
         Machine Learning, Data Science, and Web Development. Currently in an
         exchange program at Shibaura Institute of Technology, Tokyo.
@@ -27,15 +31,17 @@ const base = import.meta.env.BASE_URL;
     </section>
 
     <section id="experience" class="section reveal">
-      <h2 class="section-title">Experience</h2>
+      <h2 class="section-title" data-i18n="sec-exp">Experience</h2>
       <div class="list-grid">
         <div class="list-item reveal">
           <div class="list-header">
-            <span class="list-title">Tour Guide</span>
-            <span class="list-date">Jun 2026 - Present</span>
+            <span class="list-title" data-i18n="exp-guide">Tour Guide</span>
+            <span class="list-date" data-i18n="date-yummy"
+              >Jun 2026 - Present</span
+            >
           </div>
           <div class="list-subtitle">Yummy Guide</div>
-          <div class="list-content">
+          <div class="list-content" data-i18n="exp-guide-desc">
             Provide comprehensive guides entirely in English of the Ghibli
             Museum in Mitaka, Tokyo. The guests are mostly tourists travelling
             in Japan.
@@ -43,42 +49,53 @@ const base = import.meta.env.BASE_URL;
         </div>
         <div class="list-item reveal">
           <div class="list-header">
-            <span class="list-title">Academic Events Activist</span>
-            <span class="list-date">Mar 2025 - Dec 2025</span>
+            <span class="list-title" data-i18n="exp-aca"
+              >Academic Events Activist</span
+            >
+            <span class="list-date" data-i18n="date-himti-aca"
+              >Mar 2025 - Dec 2025</span
+            >
           </div>
           <div class="list-subtitle">
             Himpunan Mahasiswa Teknik Informatika (HIMTI), BINUS University
           </div>
-          <div class="list-content">
+          <div class="list-content" data-i18n="exp-aca-desc">
             Created and carried out events under HIMTI.
           </div>
         </div>
         <div class="list-item reveal">
           <div class="list-header">
-            <span class="list-title">Web Development Activist</span>
-            <span class="list-date">Mar 2024 - Dec 2024</span>
+            <span class="list-title" data-i18n="exp-web"
+              >Web Development Activist</span
+            >
+            <span class="list-date" data-i18n="date-himti-web"
+              >Mar 2024 - Dec 2024</span
+            >
           </div>
           <div class="list-subtitle">
             Himpunan Mahasiswa Teknik Informatika (HIMTI), BINUS University
           </div>
-          <div class="list-content">
+          <div class="list-content" data-i18n="exp-web-desc">
             Developed the frontend of HIMTI's website and other events using
             HTML, CSS, and JS.
           </div>
           <a
             href={`${base}/assets/img/certificates/himti-web-development-activist.jpg`}
-            class="proof-link">View Certificate</a
+            class="proof-link"
+            data-i18n="view-cert">View Certificate</a
           >
         </div>
         <div class="list-item reveal">
           <div class="list-header">
-            <span class="list-title">Semi Finalist</span>
-            <span class="list-date">Feb 2024 - Oct 2024</span>
+            <span class="list-title" data-i18n="exp-sic">Semi Finalist</span>
+            <span class="list-date" data-i18n="date-sic"
+              >Feb 2024 - Oct 2024</span
+            >
           </div>
           <div class="list-subtitle">
             Samsung Innovation Campus by Skilvul (Batch 5)
           </div>
-          <div class="list-content">
+          <div class="list-content" data-i18n="exp-sic-desc">
             Completed the intensive bootcamps for AI/ML, Python, and IoT.
             Delivered "SafeFall", which is a real-time fall detection app using
             YOLO computer vision models. Successfully reached the semi finals as
@@ -86,52 +103,64 @@ const base = import.meta.env.BASE_URL;
           </div>
           <a
             href={`${base}/assets/img/certificates/sic5-semi-final.jpg`}
-            class="proof-link">View Certificate</a
+            class="proof-link"
+            data-i18n="view-cert">View Certificate</a
           >
         </div>
         <div class="list-item reveal">
           <div class="list-header">
-            <span class="list-title">Learning & Training Activist</span>
-            <span class="list-date">Jan 2024 - Jun 2024</span>
+            <span class="list-title" data-i18n="exp-bncc"
+              >Learning & Training Activist</span
+            >
+            <span class="list-date" data-i18n="date-bncc"
+              >Jan 2024 - Jun 2024</span
+            >
           </div>
           <div class="list-subtitle">
             Bina Nusantara Computer Club (BNCC), BINUS University
           </div>
-          <div class="list-content">
+          <div class="list-content" data-i18n="exp-bncc-desc">
             Planned out and created comprehensive computer science learning
             modules for university students.
           </div>
         </div>
         <div class="list-item reveal">
           <div class="list-header">
-            <span class="list-title">Participant</span>
-            <span class="list-date">Jul 2023 - Aug 2023</span>
+            <span class="list-title" data-i18n="exp-ios">Participant</span>
+            <span class="list-date" data-i18n="date-ios"
+              >Jul 2023 - Aug 2023</span
+            >
           </div>
           <div class="list-subtitle">
             iOS Foundation by Apple Developer Academy
           </div>
-          <div class="list-content">
+          <div class="list-content" data-i18n="exp-ios-desc">
             Developed an AR-based iOS mobile app which is able to project
             traditional Balinese house designs onto real-world surfaces.
           </div>
           <a
             href={`${base}/assets/img/certificates/ios-foundation.jpg`}
-            class="proof-link">View Certificate</a
+            class="proof-link"
+            data-i18n="view-cert">View Certificate</a
           >
         </div>
       </div>
     </section>
 
     <section id="education" class="section reveal">
-      <h2 class="section-title">Education</h2>
+      <h2 class="section-title" data-i18n="sec-edu">Education</h2>
       <div class="list-grid">
         <div class="list-item reveal">
           <div class="list-header">
             <span class="list-title">Shibaura Institute of Technology</span>
-            <span class="list-date">Apr 2026 - Jul 2026</span>
+            <span class="list-date" data-i18n="date-sit"
+              >Apr 2026 - Jul 2026</span
+            >
           </div>
-          <div class="list-subtitle">Student Exchange Program</div>
-          <div class="list-content">
+          <div class="list-subtitle" data-i18n="edu-sit-sub">
+            Student Exchange Program
+          </div>
+          <div class="list-content" data-i18n="edu-sit-desc">
             Partook in a Student Exchange Program at Shibaura Institute of
             Technology, Tokyo. Learned plenty about engineering in Japan, as
             well as cross-cultural perspectives.
@@ -140,10 +169,14 @@ const base = import.meta.env.BASE_URL;
         <div class="list-item reveal">
           <div class="list-header">
             <span class="list-title">BINUS University</span>
-            <span class="list-date">Sep 2023 - Present</span>
+            <span class="list-date" data-i18n="date-binus"
+              >Sep 2023 - Present</span
+            >
           </div>
-          <div class="list-subtitle">Bachelor of Computer Science</div>
-          <div class="list-content">
+          <div class="list-subtitle" data-i18n="edu-binus-sub">
+            Bachelor of Computer Science
+          </div>
+          <div class="list-content" data-i18n="edu-binus-desc">
             Computer Science Undergraduate with a cumulative GPA of 3.92. Within
             the Global Class Program, meaning that everything is presented in
             English, along with a semester of International Study Exchange.
@@ -154,10 +187,14 @@ const base = import.meta.env.BASE_URL;
         <div class="list-item reveal">
           <div class="list-header">
             <span class="list-title">SMAK 1 BPK PENABUR Jakarta</span>
-            <span class="list-date">Jul 2020 - Jun 2023</span>
+            <span class="list-date" data-i18n="date-smak"
+              >Jul 2020 - Jun 2023</span
+            >
           </div>
-          <div class="list-subtitle">High School Diplomat</div>
-          <div class="list-content">
+          <div class="list-subtitle" data-i18n="edu-smak-sub">
+            High School Diplomat
+          </div>
+          <div class="list-content" data-i18n="edu-smak-desc">
             General high school in the Mathematics and Natural Sciences (MIPA)
             major.
           </div>
@@ -166,7 +203,7 @@ const base = import.meta.env.BASE_URL;
     </section>
 
     <section id="skills" class="section reveal">
-      <h2 class="section-title">Technical Skills</h2>
+      <h2 class="section-title" data-i18n="sec-skills">Technical Skills</h2>
       <div class="skills-container" id="skills-container">
         <span class="skill-pill">Python</span>
         <span class="skill-pill">C</span>
@@ -183,37 +220,39 @@ const base = import.meta.env.BASE_URL;
     </section>
 
     <section id="projects" class="section reveal">
-      <h2 class="section-title">Projects</h2>
+      <h2 class="section-title" data-i18n="sec-proj">Projects</h2>
       <div class="project-grid">
         <div class="reveal">
           <a href={`${base}/projects/posture-alert`} class="project-card">
             <div class="project-info">
-              <h3>Posture Alert App</h3>
-              <p>Posture Detection web using webcam.</p>
+              <h3 data-i18n="proj-pa-title">Posture Alert App</h3>
+              <p data-i18n="proj-pa-desc">
+                Posture Detection web using webcam.
+              </p>
             </div>
           </a>
         </div>
         <div class="reveal reveal-delay-1">
           <a href={`${base}/projects/code-doc-gen`} class="project-card">
             <div class="project-info">
-              <h3>Code Documentation Generator</h3>
-              <p>Generates Python documentation.</p>
+              <h3 data-i18n="proj-cd-title">Code Documentation Generator</h3>
+              <p data-i18n="proj-cd-desc">Generates Python documentation.</p>
             </div>
           </a>
         </div>
         <div class="reveal reveal-delay-2">
           <a href={`${base}/projects/safefall`} class="project-card">
             <div class="project-info">
-              <h3>SafeFall</h3>
-              <p>Fall Detection web.</p>
+              <h3 data-i18n="proj-sf-title">SafeFall</h3>
+              <p data-i18n="proj-sf-desc">Fall Detection web.</p>
             </div>
           </a>
         </div>
         <div class="reveal reveal-delay-3">
           <a href={`${base}/projects/route-planner`} class="project-card">
             <div class="project-info">
-              <h3>Public Transport Route Planner</h3>
-              <p>Public transport routing web.</p>
+              <h3 data-i18n="proj-rp-title">Public Transport Route Planner</h3>
+              <p data-i18n="proj-rp-desc">Public transport routing web.</p>
             </div>
           </a>
         </div>
@@ -223,8 +262,8 @@ const base = import.meta.env.BASE_URL;
             class="project-card"
           >
             <div class="project-info">
-              <h3>Crop Yield Predictor</h3>
-              <p>Predicts agricultural yield.</p>
+              <h3 data-i18n="proj-cy-title">Crop Yield Predictor</h3>
+              <p data-i18n="proj-cy-desc">Predicts agricultural yield.</p>
             </div>
           </a>
         </div>
@@ -234,8 +273,8 @@ const base = import.meta.env.BASE_URL;
             class="project-card"
           >
             <div class="project-info">
-              <h3>Personality Predictor</h3>
-              <p>
+              <h3 data-i18n="proj-pp-title">Personality Predictor</h3>
+              <p data-i18n="proj-pp-desc">
                 Predicts personality traits based on users' clothing choice.
               </p>
             </div>
@@ -245,7 +284,7 @@ const base = import.meta.env.BASE_URL;
     </section>
 
     <section id="achievements" class="section reveal">
-      <h2 class="section-title">Achievements</h2>
+      <h2 class="section-title" data-i18n="sec-ach">Achievements</h2>
       <div class="cert-grid">
         <div class="reveal">
           <a
@@ -258,8 +297,10 @@ const base = import.meta.env.BASE_URL;
             >
             </div>
             <div class="cert-info">
-              <h3>Dean's List 2025</h3>
-              <p>BINUS University School of Computer Science</p>
+              <h3 data-i18n="ach-dl">Dean's List 2025</h3>
+              <p data-i18n="ach-dl-desc">
+                BINUS University School of Computer Science
+              </p>
             </div>
           </a>
         </div>
@@ -274,7 +315,7 @@ const base = import.meta.env.BASE_URL;
             >
             </div>
             <div class="cert-info">
-              <h3>2nd Runner-Up Game Jam</h3>
+              <h3 data-i18n="ach-gj">2nd Runner-Up Game Jam</h3>
               <p>COMPFEST 17 by Indie Game Ignite</p>
             </div>
           </a>
@@ -297,12 +338,10 @@ const base = import.meta.env.BASE_URL;
               stroke-width="2"
               stroke-linecap="round"
               stroke-linejoin="round"
-            >
-              <path
+              ><path
                 d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"
-              ></path>
-              <polyline points="22,6 12,13 2,6"></polyline>
-            </svg>
+              ></path><polyline points="22,6 12,13 2,6"></polyline></svg
+            >
             <span class="link-text">aaronnathanaelishakleman@gmail.com</span>
           </a>
         </div>
@@ -322,11 +361,10 @@ const base = import.meta.env.BASE_URL;
               stroke-width="2"
               stroke-linecap="round"
               stroke-linejoin="round"
-            >
-              <path
+              ><path
                 d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"
-              ></path>
-            </svg>
+              ></path></svg
+            >
             <span class="link-text">github.com/CurvyCroissant</span>
           </a>
         </div>
@@ -346,13 +384,13 @@ const base = import.meta.env.BASE_URL;
               stroke-width="2"
               stroke-linecap="round"
               stroke-linejoin="round"
-            >
-              <path
+              ><path
                 d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"
-              ></path>
-              <rect x="2" y="9" width="4" height="12"></rect>
-              <circle cx="4" cy="4" r="2"></circle>
-            </svg>
+              ></path><rect x="2" y="9" width="4" height="12"></rect><circle
+                cx="4"
+                cy="4"
+                r="2"></circle></svg
+            >
             <span class="link-text">linkedin.com/in/aaron-nathanael</span>
           </a>
         </div>

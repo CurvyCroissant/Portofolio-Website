@@ -4,7 +4,8 @@ const base = import.meta.env.BASE_URL;
 ---
 
 <Layout title="Public Transport Route Planner | Aaron Nathanael">
-  <a href={`${base}/`} class="back-link">← Back to Home</a>
+  <a href={`${base}/`} class="back-link" data-i18n="back-home">← Back to Home</a
+  >
   <main class="section">
     <div class="project-detail">
       <div
@@ -15,33 +16,34 @@ const base = import.meta.env.BASE_URL;
       <h1
         class="section-title reveal reveal-delay-1"
         style="margin-bottom: 0; text-align: left; background: none; -webkit-text-fill-color: var(--text-color);"
+        data-i18n="proj-rp-title"
       >
         Public Transport Route Planner
       </h1>
 
       <div class="project-meta reveal reveal-delay-2">
         <div class="meta-item">
-          <span class="meta-label">Context</span>
-          <span class="meta-value">Academic Project</span>
+          <span class="meta-label" data-i18n="ctx-label">Context</span>
+          <span class="meta-value" data-i18n="ctx-ac">Academic Project</span>
         </div>
         <div class="meta-item">
-          <span class="meta-label">Tech Stack</span>
+          <span class="meta-label" data-i18n="ts-label">Tech Stack</span>
           <span class="meta-value">Laravel, MySQL, Leaflet.js, Firebase</span>
         </div>
       </div>
 
       <div class="project-content-grid reveal reveal-delay-3">
         <div class="content-block">
-          <h3>The Problem</h3>
-          <p>
+          <h3 data-i18n="prob-label">The Problem</h3>
+          <p data-i18n="rp-prob">
             Public transport can be frustratingly unreliable. Commuters often
             don't know if a bus is delayed or exactly when it will arrive, and a
             single centralized source for this information rarely exists.
           </p>
         </div>
         <div class="content-block">
-          <h3>The Solution</h3>
-          <p>
+          <h3 data-i18n="sol-label">The Solution</h3>
+          <p data-i18n="rp-sol">
             A full-stack app was built using Laravel and Leaflet.js. It pulls
             live GPS coordinates from Firebase for real-time tracking. However,
             to make it truly reliable, a fallback system was added: if the live
@@ -52,15 +54,17 @@ const base = import.meta.env.BASE_URL;
       </div>
 
       <div class="content-block reveal" style="margin-bottom: 48px">
-        <h3>Impact</h3>
-        <p>
+        <h3 data-i18n="imp-label">Impact</h3>
+        <p data-i18n="rp-imp">
           Provides users with clear, interactive ETAs drawn directly on a map. A
-          feature was also added that calculates a historical "on-time" rating
+          feature was also added that calculates a historical 'on-time' rating
           for different routes, helping people make better commuting decisions.
         </p>
       </div>
 
-      <h3 style="margin-top: 48px; margin-bottom: 24px">Project Gallery</h3>
+      <h3 style="margin-top: 48px; margin-bottom: 24px" data-i18n="gal-label">
+        Project Gallery
+      </h3>
       <div class="cert-grid">
         <div class="reveal">
           <a
@@ -77,7 +81,9 @@ const base = import.meta.env.BASE_URL;
               />
             </div>
             <div class="cert-info">
-              <h3 style="margin-bottom: 0">Main Route Planner</h3>
+              <h3 style="margin-bottom: 0" data-i18n="rp-gal-1">
+                Main Route Planner
+              </h3>
             </div>
           </a>
         </div>
@@ -96,7 +102,9 @@ const base = import.meta.env.BASE_URL;
               />
             </div>
             <div class="cert-info">
-              <h3 style="margin-bottom: 0">Account Registration</h3>
+              <h3 style="margin-bottom: 0" data-i18n="rp-gal-2">
+                Account Registration
+              </h3>
             </div>
           </a>
         </div>
