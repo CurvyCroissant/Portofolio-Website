@@ -56,10 +56,15 @@ document.addEventListener("DOMContentLoaded", () => {
       ja: "ビヌス大学のコンピュータサイエンス学部生。機械学習、データサイエンス、ウェブ開発を積極的に学んでいます。現在、東京の芝浦工業大学で交換留学プログラムに参加しています。",
     },
 
+    "date-bca": {
+      en: "Aug 2026 - Present",
+      id: "Agu 2026 - Sekarang",
+      ja: "2026年8月 - 現在",
+    },
     "date-yummy": {
-      en: "Jun 2026 - Present",
-      id: "Jun 2026 - Sekarang",
-      ja: "2026年6月 - 現在",
+      en: "Jun 2026 - Jul 2026",
+      id: "Jun 2026 - Jul 2026",
+      ja: "2026年6月 - 2026年7月",
     },
     "date-himti-aca": {
       en: "Mar 2025 - Dec 2025",
@@ -102,6 +107,16 @@ document.addEventListener("DOMContentLoaded", () => {
       ja: "2020年7月 - 2023年6月",
     },
 
+    "exp-bca": {
+      en: "Application Developer Intern",
+      id: "Application Developer Intern",
+      ja: "アプリケーション開発インターン",
+    },
+    "exp-bca-desc": {
+      en: "",
+      id: "",
+      ja: "",
+    },
     "exp-guide": { en: "Tour Guide", id: "Pemandu Wisata", ja: "ツアーガイド" },
     "exp-guide-desc": {
       en: "Provide comprehensive guides entirely in English of the Ghibli Museum in Mitaka, Tokyo. The guests are mostly tourists travelling in Japan.",
@@ -448,7 +463,7 @@ document.addEventListener("DOMContentLoaded", () => {
       projects:
         "1. Posture Alert App (Python, MediaPipe)\n2. Code Documentation Generator (Python, Qwen2.5)\n3. SafeFall: Fall Detection App (YOLOv8, OpenCV)\n4. Personality Predictor (PyTorch, Flask)\n5. Crop Yield Predictor (Scikit-Learn)\n6. Public Transport Route Planner (Laravel, Firebase)",
       resume:
-        "2026: Tour Guide @ Yummy Guide\n2025: Dean's List @ BINUS University School of Computer Science\n2025: 2nd Runner-up @ COMPFEST 17 Game Jam\n2025: Academic & Web Dev Activist @ HIMTI BINUS\n2024: Semi-Finalist @ Samsung Innovation Campus (Batch 5)\n2024: Learning & Training Activist @ BNCC\n2023: Participant @ Apple Developer Academy (iOS Foundation)",
+        "2026: Application Developer Intern @ PT Bank Central Asia Tbk\n2026: Tour Guide @ Yummy Guide\n2025: Dean's List @ BINUS University School of Computer Science\n2025: 2nd Runner-up @ COMPFEST 17 Game Jam\n2025: Academic & Web Dev Activist @ HIMTI BINUS\n2024: Semi-Finalist @ Samsung Innovation Campus (Batch 5)\n2024: Learning & Training Activist @ BNCC\n2023: Participant @ Apple Developer Academy (iOS Foundation)",
       contact:
         "Email    : aaronnathanaelishakleman@gmail.com\nLinkedIn : linkedin.com/in/aaron-nathanael\nGitHub   : github.com/CurvyCroissant",
       unrecognized: (cmd) =>
@@ -463,7 +478,7 @@ document.addEventListener("DOMContentLoaded", () => {
       projects:
         "1. Posture Alert App (Python, MediaPipe)\n2. Code Documentation Generator (Python, Qwen2.5)\n3. SafeFall: Fall Detection (YOLOv8, OpenCV)\n4. Personality Predictor (PyTorch, Flask)\n5. Crop Yield Predictor (Scikit-Learn)\n6. Public Transport Route Planner (Laravel, Firebase)",
       resume:
-        "2026: Pemandu Wisata @ Yummy Guide\n2025: Dean's List @ BINUS University\n2025: Juara 3 @ COMPFEST 17 Game Jam\n2025: Aktivis HIMTI BINUS\n2024: Semi Finalis @ Samsung Innovation Campus\n2024: Aktivis BNCC\n2023: Peserta @ Apple Developer Academy",
+        "2026: Application Developer Intern @ PT Bank Central Asia Tbk\n2026: Pemandu Wisata @ Yummy Guide\n2025: Dean's List @ BINUS University\n2025: Juara 3 @ COMPFEST 17 Game Jam\n2025: Aktivis HIMTI BINUS\n2024: Semi Finalis @ Samsung Innovation Campus\n2024: Aktivis BNCC\n2023: Peserta @ Apple Developer Academy",
       contact:
         "Email    : aaronnathanaelishakleman@gmail.com\nLinkedIn : linkedin.com/in/aaron-nathanael\nGitHub   : github.com/CurvyCroissant",
       unrecognized: (cmd) =>
@@ -478,7 +493,7 @@ document.addEventListener("DOMContentLoaded", () => {
       projects:
         "1. 姿勢警告アプリ (Python, MediaPipe)\n2. コード仕様書自動生成 (Python, Qwen2.5)\n3. SafeFall: 転倒検知アプリ (YOLOv8, OpenCV)\n4. 性格予測ツール (PyTorch, Flask)\n5. 収穫量予測 (Scikit-Learn)\n6. 路線プランナー (Laravel, Firebase)",
       resume:
-        "2026: ツアーガイド @ Yummy Guide\n2025: 成績優秀者 @ ビヌス大学\n2025: 3位 @ COMPFEST 17 Game Jam\n2025: HIMTI BINUS 活動メンバー\n2024: セミファイナリスト @ Samsung Innovation Campus\n2024: BNCC 活動メンバー\n2023: 参加者 @ Apple Developer Academy",
+        "2026: アプリケーション開発インターン @ PT Bank Central Asia Tbk\n2026: ツアーガイド @ Yummy Guide\n2025: 成績優秀者 @ ビヌス大学\n2025: 3位 @ COMPFEST 17 Game Jam\n2025: HIMTI BINUS 活動メンバー\n2024: セミファイナリスト @ Samsung Innovation Campus\n2024: BNCC 活動メンバー\n2023: 参加者 @ Apple Developer Academy",
       contact:
         "Email    : aaronnathanaelishakleman@gmail.com\nLinkedIn : linkedin.com/in/aaron-nathanael\nGitHub   : github.com/CurvyCroissant",
       unrecognized: (cmd) =>
