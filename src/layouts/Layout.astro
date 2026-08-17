@@ -10,8 +10,10 @@ const base = import.meta.env.BASE_URL;
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>{title}</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Montserrat:wght@700;800&display=swap"
       rel="stylesheet"
     />
   </head>
@@ -180,7 +182,6 @@ const base = import.meta.env.BASE_URL;
         </div>
         <div class="terminal-body">
           <div class="term-line" id="term-intro" data-i18n="term-intro">
-            (c) Aaron Nathanael. All rights reserved.<br /><br />
             Type 'help' to see available commands.
           </div>
           <div id="term-history"></div>

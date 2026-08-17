@@ -447,9 +447,9 @@ document.addEventListener("DOMContentLoaded", () => {
     },
 
     "term-intro": {
-      en: "(c) Aaron Nathanael. All rights reserved.<br /><br />Type 'help' to see available commands.",
-      id: "(c) Aaron Nathanael. Hak Cipta Dilindungi.<br /><br />Ketik 'help' untuk melihat perintah.",
-      ja: "(c) Aaron Nathanael. All rights reserved.<br /><br />コマンドを見るには 'help' と入力してください。",
+      en: "Type 'help' to see available commands.",
+      id: "Ketik 'help' untuk melihat perintah.",
+      ja: "コマンドを見るには 'help' と入力してください。",
     },
   };
 
