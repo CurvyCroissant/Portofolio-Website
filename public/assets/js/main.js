@@ -1,5 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
-  let currentLang = localStorage.getItem("lang") || "en";
+  let currentLang = document.documentElement.getAttribute("lang") || "en";
+  let currentTheme = document.documentElement.getAttribute("data-theme") || "light";
 
   const langData = {
     "nav-term": { en: "Terminal", id: "Terminal", ja: "ターミナル" },
@@ -51,9 +52,9 @@ document.addEventListener("DOMContentLoaded", () => {
     },
 
     "hero-desc": {
-      en: "Computer Science undergraduate at BINUS University. Actively learning Machine Learning, Data Science, and Web Development. Currently in an exchange program at Shibaura Institute of Technology, Tokyo.",
-      id: "Mahasiswa S1 Ilmu Komputer di BINUS University. Aktif mempelajari Machine Learning, Data Science, dan Web Development. Saat ini sedang mengikuti program pertukaran pelajar di Shibaura Institute of Technology, Tokyo.",
-      ja: "ビヌス大学のコンピュータサイエンス学部生。機械学習、データサイエンス、ウェブ開発を積極的に学んでいます。現在、東京の芝浦工業大学で交換留学プログラムに参加しています。",
+      en: "4th-year Computer Science undergraduate at BINUS University. Currently doing an internship as an Application Developer at PT Bank Central Asia Tbk. Passionate in learning how tech is utilized in real-world, business implementations.",
+      id: "Mahasiswa S1 Ilmu Komputer tahun ke-4 di BINUS University. Saat ini sedang magang sebagai Application Developer di PT Bank Central Asia Tbk. Bersemangat dalam mempelajari bagaimana teknologi dimanfaatkan dalam implementasi bisnis dunia nyata.",
+      ja: "ビヌス大学のコンピュータサイエンス学部4年生。現在、PT Bank Central Asia Tbkでアプリケーション開発のインターンをしています。現実のビジネス環境でテクノロジーがどのように活用されているかを学ぶことに情熱を注いでいます。",
     },
 
     "date-bca": {
@@ -113,15 +114,15 @@ document.addEventListener("DOMContentLoaded", () => {
       ja: "アプリケーション開発インターン",
     },
     "exp-bca-desc": {
-      en: "",
-      id: "",
-      ja: "",
+      en: "Working in the iOS Development team responsible for continuously developing and maintaining the Merchant BCA application.",
+      id: "Bekerja di tim iOS Development yang bertanggung jawab untuk terus mengembangkan dan memelihara aplikasi Merchant BCA.",
+      ja: "iOS開発チームに所属し、Merchant BCAアプリケーションの継続的な開発と保守を担当しています。",
     },
     "exp-guide": { en: "Tour Guide", id: "Pemandu Wisata", ja: "ツアーガイド" },
     "exp-guide-desc": {
-      en: "Provide comprehensive guides entirely in English of the Ghibli Museum in Mitaka, Tokyo. The guests are mostly tourists travelling in Japan.",
-      id: "Memberikan panduan komprehensif sepenuhnya dalam bahasa Inggris di Museum Ghibli di Mitaka, Tokyo. Sebagian besar tamu adalah turis yang bepergian di Jepang.",
-      ja: "東京・三鷹のジブリ美術館で、すべて英語による総合的なガイドを提供。ゲストは主に日本を旅行中の観光客です。",
+      en: "Lead tours of the Ghibli Museum in Mitaka, Tokyo. The tour is conducted entirely in English and basic-level Japanese. The guests are mostly English-speaking tourists traveling in Japan.",
+      id: "Memimpin tur Museum Ghibli di Mitaka, Tokyo. Tur dilakukan sepenuhnya dalam bahasa Inggris dan bahasa Jepang tingkat dasar. Sebagian besar tamu adalah turis berbahasa Inggris yang bepergian di Jepang.",
+      ja: "東京・三鷹のジブリ美術館のツアーを案内。ツアーはすべて英語と基礎レベルの日本語で行われます。ゲストは主に日本を旅行中の英語を話す観光客です。",
     },
     "exp-aca": {
       en: "Academic Events Activist",
@@ -457,7 +458,7 @@ document.addEventListener("DOMContentLoaded", () => {
     en: {
       help: "Available commands:\n  about    - Learn more about me\n  skills   - View technical stack\n  projects - View selected works\n  resume   - View experience & achievements\n  contact  - Get my email & links\n  clear    - Clear terminal\n  exit     - Close terminal",
       about:
-        "Aaron Nathanael\nComputer Science Undergraduate @ BINUS University (GPA: 3.92)\nCurrently on Exchange @ Shibaura Institute of Technology, Tokyo.\nActively learning Artificial Intelligence and Web Development.",
+        "Aaron Nathanael\n4th-year Computer Science Undergraduate @ BINUS University (GPA: 3.92)\nCurrently doing an internship as an Application Developer at PT Bank Central Asia Tbk.\nPassionate in learning how tech is utilized in real-world, business implementations.",
       skills:
         "Languages: Python, PHP, JavaScript, Swift, C, HTML, CSS\nAI/ML    : PyTorch, Scikit-Learn, YOLOv8, HuggingFace, MediaPipe, OpenCV\nWeb Dev  : Laravel, MySQL, Streamlit, Firebase, React/Astro\nTools    : Git, NLTK, Pandas, NumPy, Data Analytics",
       projects:
@@ -472,7 +473,7 @@ document.addEventListener("DOMContentLoaded", () => {
     id: {
       help: "Perintah tersedia:\n  about    - Tentang saya\n  skills   - Keahlian teknis\n  projects - Proyek pilihan\n  resume   - Pengalaman & pencapaian\n  contact  - Kontak saya\n  clear    - Bersihkan terminal\n  exit     - Tutup terminal",
       about:
-        "Aaron Nathanael\nMahasiswa S1 Ilmu Komputer @ BINUS University (IPK: 3.92)\nSedang Pertukaran Pelajar @ Shibaura Institute of Technology, Tokyo.\nAktif mempelajari AI dan Web Development.",
+        "Aaron Nathanael\nMahasiswa S1 Ilmu Komputer tahun ke-4 @ BINUS University (IPK: 3.92)\nSaat ini sedang magang sebagai Application Developer di PT Bank Central Asia Tbk.\nBersemangat dalam mempelajari bagaimana teknologi dimanfaatkan dalam implementasi bisnis dunia nyata.",
       skills:
         "Bahasa   : Python, PHP, JavaScript, Swift, C, HTML, CSS\nAI/ML    : PyTorch, Scikit-Learn, YOLOv8, HuggingFace, MediaPipe, OpenCV\nWeb Dev  : Laravel, MySQL, Streamlit, Firebase, React/Astro\nAlat     : Git, NLTK, Pandas, NumPy, Data Analytics",
       projects:
@@ -487,7 +488,7 @@ document.addEventListener("DOMContentLoaded", () => {
     ja: {
       help: "利用可能なコマンド:\n  about    - 私について\n  skills   - 技術スタック\n  projects - プロジェクト\n  resume   - 経歴と実績\n  contact  - 連絡先\n  clear    - ターミナルをクリア\n  exit     - ターミナルを閉じる",
       about:
-        "Aaron Nathanael\nビヌス大学 コンピュータサイエンス学部 (GPA: 3.92)\n芝浦工業大学にて交換留学生。\n人工知能とウェブ開発を専攻。",
+        "Aaron Nathanael\nビヌス大学 コンピュータサイエンス学部 4年生 (GPA: 3.92)\n現在、PT Bank Central Asia Tbkにてアプリケーション開発インターン。\n現実のビジネス環境でテクノロジーがどのように活用されているかを学ぶことに情熱を注いでいます。",
       skills:
         "言語      : Python, PHP, JavaScript, Swift, C, HTML, CSS\nAI/ML    : PyTorch, Scikit-Learn, YOLOv8, HuggingFace, MediaPipe, OpenCV\nWeb 開発  : Laravel, MySQL, Streamlit, Firebase, React/Astro\nツール    : Git, NLTK, Pandas, NumPy, Data Analytics",
       projects:
@@ -511,9 +512,9 @@ document.addEventListener("DOMContentLoaded", () => {
         : langData["nav-theme-light"][lang];
   };
 
-  const setLanguage = (lang) => {
+  const setLanguage = (lang, save = true) => {
     currentLang = lang;
-    localStorage.setItem("lang", lang);
+    if(save) localStorage.setItem("lang", lang);
     document.documentElement.setAttribute("lang", lang);
     document.getElementById("current-lang-text").innerText = lang.toUpperCase();
 
@@ -531,18 +532,18 @@ document.addEventListener("DOMContentLoaded", () => {
         btn.classList.remove("active-lang");
       }
     });
-
-    const currentTheme =
-      document.documentElement.getAttribute("data-theme") || "dark";
     updateThemeText(currentTheme, lang);
   };
 
-  const setTheme = (theme) => {
+  const setTheme = (theme, save = true) => {
+    currentTheme = theme;
     document.documentElement.setAttribute("data-theme", theme);
-    localStorage.setItem("theme", theme);
+    if(save) localStorage.setItem("theme", theme);
+    
     const toggleBtn = document.getElementById("theme-toggle");
     if (!toggleBtn) return;
     const icon = toggleBtn.querySelector(".mode-icon");
+    
     if (theme === "light") {
       icon.innerHTML = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>`;
     } else {
@@ -551,9 +552,8 @@ document.addEventListener("DOMContentLoaded", () => {
     updateThemeText(theme, currentLang);
   };
 
-  const savedTheme = localStorage.getItem("theme") || "dark";
-  setTheme(savedTheme);
-  setLanguage(currentLang);
+  setTheme(currentTheme, false);
+  setLanguage(currentLang, false);
 
   const themeToggle = document.getElementById("theme-toggle");
   if (themeToggle) {
@@ -633,7 +633,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const modal = document.getElementById("cert-modal");
   const modalImg = document.getElementById("modal-image");
-  const closeBtn = document.querySelector(".modal-close");
 
   let scale = 1,
     posX = 0,
@@ -641,6 +640,8 @@ document.addEventListener("DOMContentLoaded", () => {
     isDragging = false,
     startX = 0,
     startY = 0;
+  
+  let originRect = null; // Used to track where the modal should expand/shrink from
 
   const setTransform = (smooth = false) => {
     const w = modalImg.offsetWidth,
@@ -652,7 +653,7 @@ document.addEventListener("DOMContentLoaded", () => {
     posX = Math.max(-maxPosX, Math.min(maxPosX, posX));
     posY = Math.max(-maxPosY, Math.min(maxPosY, posY));
     modalImg.style.transition = smooth ? "transform 0.15s ease-out" : "none";
-    modalImg.style.transform = `translate(calc(-50% + ${posX}px), calc(-50% + ${posY}px)) scale(${scale})`;
+    modalImg.style.transform = `translate3d(calc(-50% + ${posX}px), calc(-50% + ${posY}px), 0) scale(${scale})`;
     modalImg.style.cursor =
       scale > 1 ? (isDragging ? "grabbing" : "grab") : "grab";
   };
@@ -666,17 +667,40 @@ document.addEventListener("DOMContentLoaded", () => {
       trigger.addEventListener("click", (e) => {
         e.preventDefault();
         if (modal && modalImg) {
-          modalImg.src =
-            trigger.getAttribute("href") ||
-            trigger.querySelector("img").getAttribute("src");
+          const targetEl = trigger.querySelector("img") || trigger.querySelector(".cert-image") || trigger;
+          originRect = targetEl.getBoundingClientRect();
+
+          // Hide image initially to prepare for FLIP animation mapping
+          modalImg.style.opacity = '0';
+          modalImg.style.transition = 'none';
+          
+          modalImg.onload = () => {
+             // Reset zoom & pan variables
+             scale = 1; posX = 0; posY = 0;
+             
+             // Calculate precise starting location to match the clicked thumbnail
+             const unzoomedWidth = modalImg.offsetWidth || modalImg.naturalWidth;
+             const startScale = (originRect.width / unzoomedWidth) || 0.5;
+             const startOffsetX = (originRect.left + originRect.width / 2) - (window.innerWidth / 2);
+             const startOffsetY = (originRect.top + originRect.height / 2) - (window.innerHeight / 2);
+
+             // Apply starting transform
+             modalImg.style.transform = `translate3d(calc(-50% + ${startOffsetX}px), calc(-50% + ${startOffsetY}px), 0) scale(${startScale})`;
+             modalImg.style.opacity = '1';
+             
+             // Force a browser reflow so it registers the starting position
+             modalImg.offsetHeight;
+
+             // Expand to the center of the viewport smoothly
+             modalImg.style.transition = 'transform 0.4s cubic-bezier(0.22, 1, 0.36, 1)';
+             modalImg.style.transform = `translate3d(-50%, -50%, 0) scale(1)`;
+             
+             modalImg.onload = null;
+          };
+          
+          modalImg.src = trigger.getAttribute("href") || trigger.querySelector("img")?.getAttribute("src");
           modal.classList.add("active");
           lockScroll();
-          scale = 1;
-          posX = 0;
-          posY = 0;
-          modalImg.style.transition = "";
-          modalImg.style.transform = "";
-          modalImg.style.cursor = "grab";
         }
       });
     });
@@ -684,19 +708,33 @@ document.addEventListener("DOMContentLoaded", () => {
   const closeModal = () => {
     modal.classList.remove("active");
     unlockScroll();
-    scale = 1;
-    posX = 0;
-    posY = 0;
-    modalImg.style.transition = "";
-    modalImg.style.transform = "";
+    
+    // Reverse the FLIP mapping perfectly back to the original thumbnail
+    if (originRect) {
+        const unzoomedWidth = modalImg.offsetWidth;
+        const endScale = originRect.width / unzoomedWidth;
+        const endOffsetX = (originRect.left + originRect.width / 2) - (window.innerWidth / 2);
+        const endOffsetY = (originRect.top + originRect.height / 2) - (window.innerHeight / 2);
+        
+        modalImg.style.transition = 'transform 0.4s cubic-bezier(0.22, 1, 0.36, 1)';
+        modalImg.style.transform = `translate3d(calc(-50% + ${endOffsetX}px), calc(-50% + ${endOffsetY}px), 0) scale(${endScale})`;
+    }
+
+    // Wait until animation finishes before wiping inline styles to prevent jarring shrink jumps
     setTimeout(() => {
-      if (!modal.classList.contains("active")) modalImg.src = "";
+      if (!modal.classList.contains("active")) {
+          modalImg.src = "";
+          modalImg.style.opacity = '0';
+          modalImg.style.transform = "";
+          modalImg.style.transition = "";
+          originRect = null;
+      }
     }, 400);
   };
 
-  if (closeBtn && modal) {
-    closeBtn.addEventListener("click", closeModal);
+  if (modal) {
     modal.addEventListener("click", (e) => {
+      // Close simply by clicking outside the image
       if (e.target === modal) closeModal();
     });
   }
@@ -920,15 +958,17 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   const skillsContainer = document.querySelector(".skills-container");
-  if (skillsContainer && typeof Matter !== "undefined") {
+  
+  const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  if (skillsContainer && typeof Matter !== "undefined" && !prefersReducedMotion) {
     const pills = Array.from(document.querySelectorAll(".skill-pill"));
     const bodyData = pills.map((pill) => ({
       pill,
       width: pill.getBoundingClientRect().width,
       height: pill.getBoundingClientRect().height,
     }));
-    const { Engine, Runner, Bodies, Composite, Mouse, MouseConstraint } =
-      Matter;
+    const { Engine, Runner, Bodies, Composite, Mouse, MouseConstraint } = Matter;
     const engine = Engine.create({
       positionIterations: 10,
       velocityIterations: 10,
@@ -1051,8 +1091,7 @@ document.addEventListener("DOMContentLoaded", () => {
       bodyData.forEach((data) => {
         data.pill.style.left = `${data.body.position.x}px`;
         data.pill.style.top = `${data.body.position.y}px`;
-        // Forced hardware acceleration for mobile WebKit paint fixes
-        data.pill.style.transform = `translate(-50%, -50%) translateZ(0)`;
+        data.pill.style.transform = `translate3d(-50%, -50%, 0)`;
       });
     });
 

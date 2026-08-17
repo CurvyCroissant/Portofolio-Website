@@ -9,6 +9,8 @@ const base = import.meta.env.BASE_URL;
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#fafafa" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#0a0a0a" media="(prefers-color-scheme: dark)" />
     <title>{title}</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -16,6 +18,35 @@ const base = import.meta.env.BASE_URL;
       href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Montserrat:wght@700;800&display=swap"
       rel="stylesheet"
     />
+    
+    <!-- Inline script to prevent FOUC and detect user system preferences before rendering -->
+    <script is:inline>
+      (function() {
+        try {
+          var savedTheme = localStorage.getItem('theme');
+          if (savedTheme) {
+            document.documentElement.setAttribute('data-theme', savedTheme);
+          } else {
+            var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+            var defaultTheme = prefersDark ? 'dark' : 'light';
+            document.documentElement.setAttribute('data-theme', defaultTheme);
+            localStorage.setItem('theme', defaultTheme);
+          }
+
+          var savedLang = localStorage.getItem('lang');
+          if (savedLang) {
+            document.documentElement.setAttribute('lang', savedLang);
+          } else {
+            var userLang = navigator.language || navigator.userLanguage || '';
+            var defaultLang = 'en';
+            if (userLang.toLowerCase().startsWith('id')) defaultLang = 'id';
+            if (userLang.toLowerCase().startsWith('ja')) defaultLang = 'ja';
+            document.documentElement.setAttribute('lang', defaultLang);
+            localStorage.setItem('lang', defaultLang);
+          }
+        } catch (e) {}
+      })();
+    </script>
   </head>
   <body>
     <div class="floating-controls">
@@ -68,8 +99,8 @@ const base = import.meta.env.BASE_URL;
       </div>
 
       <button id="theme-toggle" class="theme-toggle" aria-label="Toggle Theme">
-        <span class="toggle-text" data-i18n="nav-theme">Light</span>
-        <span class="mode-icon">
+        <span class="toggle-text" data-i18n="nav-theme">Dark</span>
+        <span class="mode-icon" id="theme-icon">
           <svg
             viewBox="0 0 24 24"
             fill="none"
@@ -78,15 +109,7 @@ const base = import.meta.env.BASE_URL;
             stroke-linecap="round"
             stroke-linejoin="round"
           >
-            <circle cx="12" cy="12" r="5"></circle>
-            <line x1="12" y1="1" x2="12" y2="3"></line>
-            <line x1="12" y1="21" x2="12" y2="23"></line>
-            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
-            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
-            <line x1="1" y1="12" x2="3" y2="12"></line>
-            <line x1="21" y1="12" x2="23" y2="12"></line>
-            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
-            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
           </svg>
         </span>
       </button>
@@ -95,23 +118,6 @@ const base = import.meta.env.BASE_URL;
     <slot />
 
     <div class="modal" id="cert-modal">
-      <button class="modal-close" aria-label="Close modal">
-        <svg
-          width="24"
-          height="24"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="currentColor"
-          stroke-width="2"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          ><line x1="18" y1="6" x2="6" y2="18"></line><line
-            x1="6"
-            y1="6"
-            x2="18"
-            y2="18"></line></svg
-        >
-      </button>
       <img class="modal-content" id="modal-image" src="" alt="Expanded View" />
     </div>
 
@@ -200,9 +206,11 @@ const base = import.meta.env.BASE_URL;
     </div>
   </body>
 
+  <!-- Defer loading for performance mapping -->
   <script
     is:inline
+    defer
     src="https://cdnjs.cloudflare.com/ajax/libs/matter-js/0.19.0/matter.min.js"
   ></script>
-  <script is:inline src={`${base}/assets/js/main.js`}></script>
+  <script is:inline defer src={`${base}/assets/js/main.js`}></script>
 </html>
