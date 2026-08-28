@@ -360,20 +360,24 @@ document.addEventListener("DOMContentLoaded", () => {
         : langData["nav-theme-light"][lang];
   };
 
+  const i18nElements = Array.from(document.querySelectorAll("[data-i18n]"));
+  const langOptions = Array.from(document.querySelectorAll(".lang-option"));
+  const currentLangText = document.getElementById("current-lang-text");
+
   const setLanguage = (lang, save = true) => {
     currentLang = lang;
     if (save) localStorage.setItem("lang", lang);
     document.documentElement.setAttribute("lang", lang);
-    document.getElementById("current-lang-text").innerText = lang.toUpperCase();
+    if (currentLangText) currentLangText.innerText = lang.toUpperCase();
 
-    document.querySelectorAll("[data-i18n]").forEach((el) => {
+    i18nElements.forEach((el) => {
       const key = el.getAttribute("data-i18n");
       if (langData[key] && langData[key][lang]) {
         el.innerHTML = langData[key][lang];
       }
     });
 
-    document.querySelectorAll(".lang-option").forEach((btn) => {
+    langOptions.forEach((btn) => {
       if (btn.getAttribute("data-lang") === lang) {
         btn.classList.add("active-lang");
       } else {
@@ -402,6 +406,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
   setTheme(currentTheme, false);
   setLanguage(currentLang, false);
+
+  requestAnimationFrame(() => {
+    document.body.classList.add("lang-ready");
+  });
 
   const themeToggle = document.getElementById("theme-toggle");
   if (themeToggle) {
@@ -880,8 +888,9 @@ document.addEventListener("DOMContentLoaded", () => {
     const { Engine, Runner, Bodies, Composite, Mouse, MouseConstraint } =
       Matter;
     const engine = Engine.create({
-      positionIterations: 10,
-      velocityIterations: 10,
+      positionIterations: 6,
+      velocityIterations: 6,
+      enableSleeping: true,
     });
     engine.gravity.y = 0;
     engine.gravity.x = 0;

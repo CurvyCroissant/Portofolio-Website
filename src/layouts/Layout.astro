@@ -57,6 +57,17 @@ const base = import.meta.env.BASE_URL;
         } catch (e) {}
       })();
     </script>
+    <style>
+      html:not([lang="en"]) body {
+        opacity: 0;
+        visibility: hidden;
+      }
+      body.lang-ready {
+        opacity: 1 !important;
+        visibility: visible !important;
+        transition: opacity 0.3s ease;
+      }
+    </style>
   </head>
   <body>
     <div class="floating-controls">
