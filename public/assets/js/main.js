@@ -3,6 +3,22 @@ document.addEventListener("DOMContentLoaded", () => {
   let currentTheme =
     document.documentElement.getAttribute("data-theme") || "light";
 
+  const lockViewportHeight = () => {
+    document.documentElement.style.setProperty(
+      "--locked-vh",
+      `${window.innerHeight}px`,
+    );
+  };
+  lockViewportHeight();
+
+  let lastWidth = window.innerWidth;
+  window.addEventListener("resize", () => {
+    if (window.innerWidth !== lastWidth) {
+      lastWidth = window.innerWidth;
+      lockViewportHeight();
+    }
+  });
+
   const langData = {
     "nav-term": { id: "Terminal", ja: "ターミナル" },
     "nav-theme-light": { en: "Light", id: "Terang", ja: "ライト" },

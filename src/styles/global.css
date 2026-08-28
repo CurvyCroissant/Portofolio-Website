@@ -198,8 +198,7 @@ button:focus-visible {
 }
 
 .hero {
-  min-height: 100vh;
-  min-height: 100svh;
+  min-height: var(--locked-vh, 100vh);
   display: flex;
   flex-direction: column;
   justify-content: center;
