@@ -540,11 +540,11 @@ document.addEventListener("DOMContentLoaded", () => {
             Math.abs(currentRotation) === 90 ||
             Math.abs(currentRotation) === 270
           ) {
-            modalImg.style.maxWidth = "90vh";
+            modalImg.style.maxWidth = "90dvh";
             modalImg.style.maxHeight = "90vw";
           } else {
             modalImg.style.maxWidth = "90vw";
-            modalImg.style.maxHeight = "90vh";
+            modalImg.style.maxHeight = "90dvh";
           }
 
           modalImg.style.opacity = "0";

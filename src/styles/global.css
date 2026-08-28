@@ -199,6 +199,7 @@ button:focus-visible {
 
 .hero {
   min-height: 100vh;
+  min-height: 100svh;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -769,6 +770,7 @@ button:focus-visible {
   left: 0;
   width: 100vw;
   height: 100vh;
+  height: 100dvh;
   background: rgba(0, 0, 0, 0.85);
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
@@ -789,6 +791,7 @@ button:focus-visible {
   width: 95%;
   max-width: 760px;
   height: 70vh;
+  height: 70dvh;
   min-height: 400px;
   background: rgba(250, 250, 250, 0.95);
   border: 1px solid rgba(0, 0, 0, 0.1);
