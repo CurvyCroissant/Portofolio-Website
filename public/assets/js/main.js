@@ -442,18 +442,44 @@ document.addEventListener("DOMContentLoaded", () => {
       const textSpan = this.querySelector(".link-text");
       if (!textSpan) return;
       const originalText = textSpan.innerText;
+
       if (this.id === "email-link") {
         e.preventDefault();
         e.stopPropagation();
-        navigator.clipboard
-          .writeText(originalText)
-          .then(() => {
-            textSpan.innerText = "Copied!";
-            setTimeout(() => {
-              textSpan.innerText = originalText;
-            }, 2000);
-          })
-          .catch(() => {});
+
+        // iOS-safe fallback copy function
+        const copyFallback = (text) => {
+          const textArea = document.createElement("textarea");
+          textArea.value = text;
+          textArea.style.position = "absolute";
+          textArea.style.left = "-9999px";
+          document.body.appendChild(textArea);
+          textArea.select();
+          try {
+            document.execCommand("copy");
+          } catch (err) {}
+          document.body.removeChild(textArea);
+        };
+
+        const showSuccess = () => {
+          textSpan.innerText = "Copied!";
+          setTimeout(() => {
+            textSpan.innerText = originalText;
+          }, 2000);
+        };
+
+        if (navigator.clipboard && window.isSecureContext) {
+          navigator.clipboard
+            .writeText(originalText)
+            .then(showSuccess)
+            .catch(() => {
+              copyFallback(originalText);
+              showSuccess();
+            });
+        } else {
+          copyFallback(originalText);
+          showSuccess();
+        }
       } else {
         textSpan.innerText = "Redirecting...";
         setTimeout(() => {
@@ -885,7 +911,7 @@ document.addEventListener("DOMContentLoaded", () => {
     );
     Composite.add(engine.world, [ground, topWall, leftWall, rightWall]);
 
-    const cols = width < 450 ? 1 : width < 600 ? 2 : 3,
+    const cols = width < 500 ? 2 : 3,
       cellWidth = width / cols,
       cellHeight = height / Math.ceil(bodyData.length / cols);
     let indices = Array.from({ length: bodyData.length }, (_, i) => i);
