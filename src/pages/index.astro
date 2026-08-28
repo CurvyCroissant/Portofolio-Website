@@ -18,139 +18,17 @@ const base = import.meta.env.BASE_URL;
           decoding="async"
         />
       </a>
-      <h1 class="fade-in delay-1">Aaron Nathanael</h1>
+      <h1 class="fade-in delay-1" data-i18n="my-name">Aaron Nathanael</h1>
       <p
         class="fade-in delay-2"
         style="margin-top: 16px;"
         data-i18n="hero-desc"
       >
-        4th-year Computer Science undergraduate at BINUS University. Currently doing an internship as an Application Developer at PT Bank Central Asia Tbk. Passionate in learning how tech is utilized in real-world, business implementations.
+        4th-year Computer Science undergraduate at BINUS University. Currently
+        interning as an Application Developer at PT Bank Central Asia Tbk.
+        Actively learning ways tech is implemented in real-world business
+        scenarios.
       </p>
-    </section>
-
-    <section id="experience" class="section reveal">
-      <h2 class="section-title" data-i18n="sec-exp">Experience</h2>
-      <div class="list-grid">
-        <div class="list-item reveal">
-          <div class="list-header">
-            <span class="list-title" data-i18n="exp-bca">Application Developer Intern</span>
-            <span class="list-date" data-i18n="date-bca">Aug 2026 - Present</span>
-          </div>
-          <div class="list-subtitle">PT Bank Central Asia Tbk</div>
-          <div class="list-content" data-i18n="exp-bca-desc">
-            Working in the iOS Development team responsible for continuously developing and maintaining the Merchant BCA application.
-          </div>
-        </div>
-        <div class="list-item reveal">
-          <div class="list-header">
-            <span class="list-title" data-i18n="exp-guide">Tour Guide</span>
-            <span class="list-date" data-i18n="date-yummy"
-              >Jun 2026 - Jul 2026</span
-            >
-          </div>
-          <div class="list-subtitle">Yummy Guide</div>
-          <div class="list-content" data-i18n="exp-guide-desc">
-            Lead tours of the Ghibli Museum in Mitaka, Tokyo. The tour is conducted entirely in English and basic-level Japanese. The guests are mostly English-speaking tourists traveling in Japan.
-          </div>
-        </div>
-        <div class="list-item reveal">
-          <div class="list-header">
-            <span class="list-title" data-i18n="exp-aca"
-              >Academic Events Activist</span
-            >
-            <span class="list-date" data-i18n="date-himti-aca"
-              >Mar 2025 - Dec 2025</span
-            >
-          </div>
-          <div class="list-subtitle">
-            Himpunan Mahasiswa Teknik Informatika (HIMTI), BINUS University
-          </div>
-          <div class="list-content" data-i18n="exp-aca-desc">
-            Created and carried out events under HIMTI.
-          </div>
-        </div>
-        <div class="list-item reveal">
-          <div class="list-header">
-            <span class="list-title" data-i18n="exp-web"
-              >Web Development Activist</span
-            >
-            <span class="list-date" data-i18n="date-himti-web"
-              >Mar 2024 - Dec 2024</span
-            >
-          </div>
-          <div class="list-subtitle">
-            Himpunan Mahasiswa Teknik Informatika (HIMTI), BINUS University
-          </div>
-          <div class="list-content" data-i18n="exp-web-desc">
-            Developed the frontend of HIMTI's website and other events using
-            HTML, CSS, and JS.
-          </div>
-          <a
-            href={`${base}/assets/img/certificates/himti-web-development-activist.jpg`}
-            class="proof-link"
-            data-i18n="view-cert">View Certificate</a
-          >
-        </div>
-        <div class="list-item reveal">
-          <div class="list-header">
-            <span class="list-title" data-i18n="exp-sic">Semi Finalist</span>
-            <span class="list-date" data-i18n="date-sic"
-              >Feb 2024 - Oct 2024</span
-            >
-          </div>
-          <div class="list-subtitle">
-            Samsung Innovation Campus by Skilvul (Batch 5)
-          </div>
-          <div class="list-content" data-i18n="exp-sic-desc">
-            Completed the intensive bootcamps for AI/ML, Python, and IoT.
-            Delivered "SafeFall", which is a real-time fall detection app using
-            YOLO computer vision models. Successfully reached the semi finals as
-            the top 80 out of 1,898 participants.
-          </div>
-          <a
-            href={`${base}/assets/img/certificates/sic5-semi-final.jpg`}
-            class="proof-link"
-            data-i18n="view-cert">View Certificate</a
-          >
-        </div>
-        <div class="list-item reveal">
-          <div class="list-header">
-            <span class="list-title" data-i18n="exp-bncc"
-              >Learning & Training Activist</span
-            >
-            <span class="list-date" data-i18n="date-bncc"
-              >Jan 2024 - Jun 2024</span
-            >
-          </div>
-          <div class="list-subtitle">
-            Bina Nusantara Computer Club (BNCC), BINUS University
-          </div>
-          <div class="list-content" data-i18n="exp-bncc-desc">
-            Planned out and created comprehensive computer science learning
-            modules for university students.
-          </div>
-        </div>
-        <div class="list-item reveal">
-          <div class="list-header">
-            <span class="list-title" data-i18n="exp-ios">Participant</span>
-            <span class="list-date" data-i18n="date-ios"
-              >Jul 2023 - Aug 2023</span
-            >
-          </div>
-          <div class="list-subtitle">
-            iOS Foundation by Apple Developer Academy
-          </div>
-          <div class="list-content" data-i18n="exp-ios-desc">
-            Developed an AR-based iOS mobile app which is able to project
-            traditional Balinese house designs onto real-world surfaces.
-          </div>
-          <a
-            href={`${base}/assets/img/certificates/ios-foundation.jpg`}
-            class="proof-link"
-            data-i18n="view-cert">View Certificate</a
-          >
-        </div>
-      </div>
     </section>
 
     <section id="education" class="section reveal">
@@ -167,11 +45,11 @@ const base = import.meta.env.BASE_URL;
             Bachelor of Computer Science
           </div>
           <div class="list-content" data-i18n="edu-binus-desc">
-            Computer Science Undergraduate with a cumulative GPA of 3.92. Within
-            the Global Class Program, meaning that everything is presented in
-            English, along with a semester of International Study Exchange.
-            Currently pursuing Machine Learning, Data Science, and Web
-            Development.
+            Computer Science undergraduate with a cumulative GPA of 3.92. In the
+            Global Class Program, meaning that all the material is provided in
+            English, along with one semester of International Study Exchange.
+            Currently pursuing iOS App Development, Full-Stack Web Development,
+            and Machine Learning.
           </div>
         </div>
         <div class="list-item reveal">
@@ -185,10 +63,16 @@ const base = import.meta.env.BASE_URL;
             Student Exchange Program
           </div>
           <div class="list-content" data-i18n="edu-sit-desc">
-            Partook in a Student Exchange Program at Shibaura Institute of
-            Technology, Tokyo. Learned plenty about engineering in Japan, as
-            well as cross-cultural perspectives.
+            Exchanged at Shibaura Institute of Technology, Tokyo. Learned about
+            engineering in Japan, as well as communicating and working with
+            people with very different culture and backgrounds.
           </div>
+          <a
+            href={`${base}/assets/img/certificates/sit-matriculation.jpg`}
+            class="proof-link"
+            data-rotate="90"
+            data-i18n="view-cert">View Certificate</a
+          >
         </div>
         <div class="list-item reveal">
           <div class="list-header">
@@ -208,84 +92,135 @@ const base = import.meta.env.BASE_URL;
       </div>
     </section>
 
-    <section id="skills" class="section reveal">
-      <h2 class="section-title" data-i18n="sec-skills">Technical Skills</h2>
-      <div class="skills-container" id="skills-container">
-        <span class="skill-pill">Python</span>
-        <span class="skill-pill">C</span>
-        <span class="skill-pill">PHP</span>
-        <span class="skill-pill">JavaScript</span>
-        <span class="skill-pill">Swift</span>
-        <span class="skill-pill">HTML</span>
-        <span class="skill-pill">CSS</span>
-        <span class="skill-pill">MySQL</span>
-        <span class="skill-pill">Laravel</span>
-        <span class="skill-pill">Machine Learning</span>
-        <span class="skill-pill">Computer Vision</span>
-        <span class="skill-pill">Web Development</span>
-      </div>
-    </section>
-
-    <section id="projects" class="section reveal">
-      <h2 class="section-title" data-i18n="sec-proj">Projects</h2>
-      <div class="project-grid">
-        <div class="reveal">
-          <a href={`${base}/projects/posture-alert`} class="project-card">
-            <div class="project-info">
-              <h3 data-i18n="proj-pa-title">Posture Alert App</h3>
-              <p data-i18n="proj-pa-desc">
-                Posture Detection web using webcam.
-              </p>
-            </div>
-          </a>
+    <section id="experience" class="section reveal">
+      <h2 class="section-title" data-i18n="sec-exp">Experience</h2>
+      <div class="list-grid">
+        <div class="list-item reveal">
+          <div class="list-header">
+            <span class="list-title" data-i18n="exp-bca"
+              >Application Developer Intern</span
+            >
+            <span class="list-date" data-i18n="date-bca"
+              >Aug 2026 - Present</span
+            >
+          </div>
+          <div class="list-subtitle">PT Bank Central Asia Tbk</div>
+          <div class="list-content" data-i18n="exp-bca-desc">
+            Working in the iOS Development team responsible for continuously
+            developing and maintaining the Merchant BCA application.
+          </div>
         </div>
-        <div class="reveal reveal-delay-1">
-          <a href={`${base}/projects/code-doc-gen`} class="project-card">
-            <div class="project-info">
-              <h3 data-i18n="proj-cd-title">Code Documentation Generator</h3>
-              <p data-i18n="proj-cd-desc">Generates Python documentation.</p>
-            </div>
-          </a>
+        <div class="list-item reveal">
+          <div class="list-header">
+            <span class="list-title" data-i18n="exp-guide">Tour Guide</span>
+            <span class="list-date" data-i18n="date-yummy"
+              >Jun 2026 - Jul 2026</span
+            >
+          </div>
+          <div class="list-subtitle">Yummy Guide</div>
+          <div class="list-content" data-i18n="exp-guide-desc">
+            Lead tours of the Ghibli Museum in Mitaka, Tokyo. The tours were
+            conducted entirely in English and basic Japanese. The guests were
+            mostly English-speakers traveling in Japan.
+          </div>
         </div>
-        <div class="reveal reveal-delay-2">
-          <a href={`${base}/projects/safefall`} class="project-card">
-            <div class="project-info">
-              <h3 data-i18n="proj-sf-title">SafeFall</h3>
-              <p data-i18n="proj-sf-desc">Fall Detection web.</p>
-            </div>
-          </a>
+        <div class="list-item reveal">
+          <div class="list-header">
+            <span class="list-title" data-i18n="exp-aca"
+              >Academic Events Activist</span
+            >
+            <span class="list-date" data-i18n="date-himti-aca"
+              >Mar 2025 - Dec 2025</span
+            >
+          </div>
+          <div class="list-subtitle">
+            Himpunan Mahasiswa Teknik Informatika (HIMTI), BINUS University
+          </div>
+          <div class="list-content" data-i18n="exp-aca-desc">
+            Worked in teams, based on projects, to create and carry out HIMTI
+            events.
+          </div>
         </div>
-        <div class="reveal reveal-delay-3">
-          <a href={`${base}/projects/route-planner`} class="project-card">
-            <div class="project-info">
-              <h3 data-i18n="proj-rp-title">Public Transport Route Planner</h3>
-              <p data-i18n="proj-rp-desc">Public transport routing web.</p>
-            </div>
-          </a>
-        </div>
-        <div class="reveal">
+        <div class="list-item reveal">
+          <div class="list-header">
+            <span class="list-title" data-i18n="exp-web"
+              >Web Development Activist</span
+            >
+            <span class="list-date" data-i18n="date-himti-web"
+              >Mar 2024 - Dec 2024</span
+            >
+          </div>
+          <div class="list-subtitle">
+            Himpunan Mahasiswa Teknik Informatika (HIMTI), BINUS University
+          </div>
+          <div class="list-content" data-i18n="exp-web-desc">
+            Worked in teams, based on projects, to develop the frontend of HIMTI
+            websites using HTML, CSS, and JS.
+          </div>
           <a
-            href={`${base}/projects/crop-yield-predictor`}
-            class="project-card"
+            href={`${base}/assets/img/certificates/himti-web-development-activist.jpg`}
+            class="proof-link"
+            data-i18n="view-cert">View Certificate</a
           >
-            <div class="project-info">
-              <h3 data-i18n="proj-cy-title">Crop Yield Predictor</h3>
-              <p data-i18n="proj-cy-desc">Predicts agricultural yield.</p>
-            </div>
-          </a>
         </div>
-        <div class="reveal reveal-delay-1">
+        <div class="list-item reveal">
+          <div class="list-header">
+            <span class="list-title" data-i18n="exp-bncc"
+              >Learning & Training Activist</span
+            >
+            <span class="list-date" data-i18n="date-bncc"
+              >Jan 2024 - Jun 2024</span
+            >
+          </div>
+          <div class="list-subtitle">
+            Bina Nusantara Computer Club (BNCC), BINUS University
+          </div>
+          <div class="list-content" data-i18n="exp-bncc-desc">
+            Worked in teams, based on project, to plan out and create
+            comprehensive computer science learning modules for university
+            students.
+          </div>
+        </div>
+        <div class="list-item reveal">
+          <div class="list-header">
+            <span class="list-title" data-i18n="exp-sic">Participant</span>
+            <span class="list-date" data-i18n="date-sic"
+              >Feb 2024 - Oct 2024</span
+            >
+          </div>
+          <div class="list-subtitle">Samsung Innovation Campus by Skilvul</div>
+          <div class="list-content" data-i18n="exp-sic-desc">
+            Completed the intensive bootcamps for AI/ML, Python, and IoT.
+            Delivered "SafeFall", a real-time fall detection app using YOLO
+            computer vision models. Successfully reached the semi finals as the
+            top 80 out of 1,898 participants.
+          </div>
           <a
-            href={`${base}/projects/personality-predictor`}
-            class="project-card"
+            href={`${base}/assets/img/certificates/sic5-semi-final.jpg`}
+            class="proof-link"
+            data-i18n="view-cert">View Certificate</a
           >
-            <div class="project-info">
-              <h3 data-i18n="proj-pp-title">Personality Predictor</h3>
-              <p data-i18n="proj-pp-desc">
-                Predicts personality traits based on users' clothing choice.
-              </p>
-            </div>
-          </a>
+        </div>
+        <div class="list-item reveal">
+          <div class="list-header">
+            <span class="list-title" data-i18n="exp-ios">Participant</span>
+            <span class="list-date" data-i18n="date-ios"
+              >Jul 2023 - Aug 2023</span
+            >
+          </div>
+          <div class="list-subtitle">
+            iOS Foundation by Apple Developer Academy
+          </div>
+          <div class="list-content" data-i18n="exp-ios-desc">
+            Worked in a team to develop an AR-based iOS mobile app which is able
+            to project traditional Balinese house designs onto real-world
+            surfaces.
+          </div>
+          <a
+            href={`${base}/assets/img/certificates/ios-foundation.jpg`}
+            class="proof-link"
+            data-i18n="view-cert">View Certificate</a
+          >
         </div>
       </div>
     </section>
@@ -324,6 +259,112 @@ const base = import.meta.env.BASE_URL;
             <div class="cert-info">
               <h3 data-i18n="ach-gj">2nd Runner-Up Game Jam</h3>
               <p>COMPFEST 17 by Indie Game Ignite</p>
+            </div>
+          </a>
+        </div>
+        <div class="reveal reveal-delay-2">
+          <a
+            href={`${base}/assets/img/certificates/sic5-semi-final.jpg`}
+            class="cert-card"
+          >
+            <div
+              class="cert-image"
+              style={`background-image: url('${base}/assets/img/certificates/sic5-semi-final.jpg'); background-color: #1a1a1a;`}
+            >
+            </div>
+            <div class="cert-info">
+              <h3 data-i18n="ach-sic">Semi Finalist</h3>
+              <p data-i18n="ach-sic-desc">
+                Samsung Innovation Campus by Skilvul
+              </p>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section id="skills" class="section reveal">
+      <h2 class="section-title" data-i18n="sec-skills">Technical Skills</h2>
+      <div class="skills-container" id="skills-container">
+        <span class="skill-pill">Python</span>
+        <span class="skill-pill">C</span>
+        <span class="skill-pill">PHP</span>
+        <span class="skill-pill">JavaScript</span>
+        <span class="skill-pill">Swift</span>
+        <span class="skill-pill">HTML</span>
+        <span class="skill-pill">CSS</span>
+        <span class="skill-pill">MySQL</span>
+        <span class="skill-pill">Laravel</span>
+        <span class="skill-pill">Machine Learning</span>
+        <span class="skill-pill">Computer Vision</span>
+        <span class="skill-pill">Web Development</span>
+      </div>
+    </section>
+
+    <section id="projects" class="section reveal">
+      <h2 class="section-title" data-i18n="sec-proj">Projects</h2>
+      <div class="project-grid">
+        <div class="reveal">
+          <a href={`${base}/projects/posture-alert`} class="project-card">
+            <div class="project-info">
+              <h3 data-i18n="proj-pa-title">Posture Alert App</h3>
+              <p data-i18n="proj-pa-desc">
+                Posture detection web app using webcam.
+              </p>
+            </div>
+          </a>
+        </div>
+        <div class="reveal reveal-delay-1">
+          <a href={`${base}/projects/code-doc-gen`} class="project-card">
+            <div class="project-info">
+              <h3 data-i18n="proj-cd-title">Code Documentation Generator</h3>
+              <p data-i18n="proj-cd-desc">
+                Python documentation generator web app and CLI.
+              </p>
+            </div>
+          </a>
+        </div>
+        <div class="reveal reveal-delay-2">
+          <a href={`${base}/projects/safefall`} class="project-card">
+            <div class="project-info">
+              <h3 data-i18n="proj-sf-title">SafeFall</h3>
+              <p data-i18n="proj-sf-desc">Fall detection web app.</p>
+            </div>
+          </a>
+        </div>
+        <div class="reveal reveal-delay-3">
+          <a href={`${base}/projects/route-planner`} class="project-card">
+            <div class="project-info">
+              <h3 data-i18n="proj-rp-title">Public Transport Route Planner</h3>
+              <p data-i18n="proj-rp-desc">
+                Public transport route planner web app.
+              </p>
+            </div>
+          </a>
+        </div>
+        <div class="reveal">
+          <a
+            href={`${base}/projects/crop-yield-predictor`}
+            class="project-card"
+          >
+            <div class="project-info">
+              <h3 data-i18n="proj-cy-title">Crop Yield Predictor</h3>
+              <p data-i18n="proj-cy-desc">
+                Agricultural yield predictive model.
+              </p>
+            </div>
+          </a>
+        </div>
+        <div class="reveal reveal-delay-1">
+          <a
+            href={`${base}/projects/personality-predictor`}
+            class="project-card"
+          >
+            <div class="project-info">
+              <h3 data-i18n="proj-pp-title">Personality Predictor</h3>
+              <p data-i18n="proj-pp-desc">
+                Personality trait predictor web app based on clothing.
+              </p>
             </div>
           </a>
         </div>
@@ -402,7 +443,7 @@ const base = import.meta.env.BASE_URL;
           </a>
         </div>
       </div>
-      <p class="footer-text reveal reveal-delay-3">
+      <p class="footer-text reveal reveal-delay-3" data-i18n="footer-copy">
         &copy; 2026 Aaron Nathanael
       </p>
     </div>

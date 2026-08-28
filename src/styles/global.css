@@ -11,7 +11,9 @@
   --pill-bg: rgba(250, 250, 250, 0.95);
   --pill-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
 
-  --theme-transition: background-color 0.6s ease, color 0.6s ease, border-color 0.6s ease, stroke 0.6s ease;
+  --theme-transition:
+    background-color 0.6s ease, color 0.6s ease, border-color 0.6s ease,
+    stroke 0.6s ease;
   --transition: all 0.6s cubic-bezier(0.25, 1, 0.5, 1);
   --reveal-offset: 30px;
   --reveal-duration: 0.9s;
@@ -286,7 +288,7 @@ button:focus-visible {
 }
 
 .skill-pill {
-  padding: 10px 24px;
+  padding: clamp(8px, 2vw, 10px) clamp(16px, 4vw, 24px);
   border-radius: 40px;
   border: 1px solid var(--border-color);
   font-size: clamp(12px, 3vw, 14px);
@@ -328,7 +330,10 @@ button:focus-visible {
   background: var(--card-bg);
   border-radius: 20px;
   border: 1px solid var(--border-color);
-  transition: var(--theme-transition), transform 0.5s cubic-bezier(0.25, 1, 0.5, 1), box-shadow 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+  transition:
+    var(--theme-transition),
+    transform 0.5s cubic-bezier(0.25, 1, 0.5, 1),
+    box-shadow 0.5s cubic-bezier(0.25, 1, 0.5, 1);
   cursor: pointer;
   text-decoration: none;
   color: inherit;
@@ -413,22 +418,60 @@ button:focus-visible {
 }
 
 .cert-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr));
+  display: flex;
+  overflow-x: auto;
+  overflow-y: hidden;
+  touch-action: pan-x pan-y;
   gap: 32px;
   max-width: 1100px;
   margin: 0 auto;
+  padding: 16px 20px 48px 20px;
+  scroll-snap-type: x proximity;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: thin;
+  scrollbar-color: var(--border-color) transparent;
+}
+@media (min-width: 1024px) {
+  .cert-grid {
+    justify-content: center;
+  }
+}
+.cert-grid::-webkit-scrollbar {
+  height: 8px;
+}
+.cert-grid::-webkit-scrollbar-track {
+  background: transparent;
+}
+.cert-grid::-webkit-scrollbar-thumb {
+  background: var(--border-color);
+  border-radius: 4px;
+}
+.cert-grid::-webkit-scrollbar-thumb:hover {
+  background: var(--border-hover);
+}
+.cert-grid > div {
+  flex: 0 0 min(100%, 320px);
+  max-width: 320px;
+  scroll-snap-align: center;
+  display: flex;
+  flex-direction: column;
 }
 .cert-card {
   background: var(--card-bg);
   border-radius: 16px;
   border: 1px solid var(--border-color);
   overflow: hidden;
-  transition: var(--theme-transition), transform 0.5s cubic-bezier(0.25, 1, 0.5, 1), box-shadow 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+  transition:
+    var(--theme-transition),
+    transform 0.4s cubic-bezier(0.25, 1, 0.5, 1),
+    box-shadow 0.4s cubic-bezier(0.25, 1, 0.5, 1);
   display: flex;
   flex-direction: column;
   text-decoration: none;
   color: inherit;
+  height: 100%;
+  width: 100%;
+  will-change: transform;
 }
 .cert-card:hover,
 .cert-card:focus-visible {
@@ -450,6 +493,9 @@ button:focus-visible {
 }
 .cert-info {
   padding: 24px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
 }
 .cert-info h3 {
   font-size: 16px;
@@ -460,6 +506,7 @@ button:focus-visible {
 .cert-info p {
   font-size: 14px;
   opacity: 0.6;
+  flex-grow: 1;
 }
 
 .list-grid {
@@ -579,25 +626,34 @@ button:focus-visible {
 }
 
 .back-link {
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
   color: var(--text-color);
   text-decoration: none;
-  font-weight: 600;
-  font-size: 14px;
-  opacity: 0.6;
+  font-weight: 500;
+  font-size: 13px;
   transition: var(--transition);
-  padding: 24px 32px;
+  padding: 8px 16px;
   position: fixed;
-  top: 0;
-  left: 0;
+  top: 24px;
+  left: 24px;
   z-index: 1000;
-  letter-spacing: 0.02em;
+  background: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--border-color);
+  border-radius: 30px;
+}
+[data-theme="dark"] .back-link {
+  background: rgba(20, 20, 20, 0.6);
 }
 .back-link:hover,
 .back-link:focus-visible {
-  opacity: 1;
   color: var(--accent-color);
-  transform: translateY(-4px);
+  transform: translateY(-2px);
+  background: var(--card-bg-hover);
+  border-color: var(--accent-color);
+  box-shadow: 0 8px 24px var(--accent-glow);
 }
 .repo-link {
   display: inline-block;
@@ -741,7 +797,11 @@ button:focus-visible {
   flex-direction: column;
   overflow: hidden;
   box-shadow: 0 30px 60px rgba(0, 0, 0, 0.2);
-  transition: var(--theme-transition), transform 0.6s cubic-bezier(0.22, 1, 0.36, 1), width 0.6s cubic-bezier(0.22, 1, 0.36, 1), height 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+  transition:
+    var(--theme-transition),
+    transform 0.6s cubic-bezier(0.22, 1, 0.36, 1),
+    width 0.6s cubic-bezier(0.22, 1, 0.36, 1),
+    height 0.6s cubic-bezier(0.22, 1, 0.36, 1);
 }
 [data-theme="dark"] .terminal-window {
   background: rgba(10, 10, 10, 0.95);
@@ -807,38 +867,6 @@ html[lang="ja"] .term-title-text::before {
   content: "CMD";
 }
 
-.term-controls {
-  display: flex;
-  height: 100%;
-}
-.term-btn {
-  width: 46px;
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  cursor: pointer;
-  color: #555555;
-  font-size: 14px;
-  transition: var(--theme-transition);
-}
-[data-theme="dark"] .term-btn {
-  color: #cccccc;
-}
-.term-btn:hover {
-  background: #cccccc;
-  color: #111111;
-}
-[data-theme="dark"] .term-btn:hover {
-  background: #333333;
-  color: #cccccc;
-}
-.term-btn.close:hover,
-[data-theme="dark"] .term-btn.close:hover {
-  background: #e81123;
-  color: white;
-}
-
 .terminal-body {
   padding: 16px;
   flex: 1;
@@ -847,7 +875,9 @@ html[lang="ja"] .term-title-text::before {
   color: #333333;
   font-family: Consolas, "Lucida Console", monospace;
   font-size: clamp(12px, 3vw, 14px);
-  transition: var(--theme-transition), opacity 0.2s;
+  transition:
+    var(--theme-transition),
+    opacity 0.2s;
 }
 [data-theme="dark"] .terminal-body {
   background: #0c0c0c;
@@ -964,7 +994,9 @@ html[lang="ja"] .term-title-text::before {
     align-items: center;
   }
   .back-link {
-    padding: 20px;
+    top: 16px;
+    left: 16px;
+    padding: 8px 16px;
   }
   .project-meta {
     flex-direction: column;
@@ -974,11 +1006,11 @@ html[lang="ja"] .term-title-text::before {
   }
 
   .lang-dropdown-menu {
-    transform: translateX(-80%) translateY(-10px);
+    transform: translateY(-10px);
     right: 0;
     left: auto;
   }
   .lang-dropdown-menu.active {
-    transform: translateX(-80%) translateY(0);
+    transform: translateY(0);
   }
 }
